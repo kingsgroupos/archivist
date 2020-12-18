@@ -5,7 +5,7 @@ import (
 	"strings"
 
 	"github.com/pkg/errors"
-	"gitlab-ee.funplus.io/watcher/watcher/misc"
+	"github.com/kingsgroupos/misc"
 )
 
 type Meta struct {

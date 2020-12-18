@@ -13,10 +13,10 @@ import (
 
 	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
-	"gitlab-ee.funplus.io/watcher/watcher/archivist/cli/archivist/guesser"
-	"gitlab-ee.funplus.io/watcher/watcher/archivist/cli/archivist/meta"
-	"gitlab-ee.funplus.io/watcher/watcher/misc"
-	"gitlab-ee.funplus.io/watcher/watcher/misc/variable"
+	"github.com/kingsgroupos/archivist/cli/archivist/guesser"
+	"github.com/kingsgroupos/archivist/cli/archivist/meta"
+	"github.com/kingsgroupos/misc"
+	"github.com/kingsgroupos/misc/variable"
 )
 
 type sharedFlags struct {

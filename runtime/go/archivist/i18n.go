@@ -1,6 +1,6 @@
 package archivist
 
-import "gitlab-ee.funplus.io/watcher/watcher/misc/wlang"
+import "github.com/kingsgroupos/misc/wlang"
 
 var (
 	ResolveI18n func(lang, key string) string

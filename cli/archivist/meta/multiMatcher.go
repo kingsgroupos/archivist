@@ -4,8 +4,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"gitlab-ee.funplus.io/watcher/watcher/archivist/cli/archivist/guesser"
-	"gitlab-ee.funplus.io/watcher/watcher/misc"
+	"github.com/kingsgroupos/archivist/cli/archivist/guesser"
+	"github.com/kingsgroupos/misc"
 )
 
 type MultiMatcher struct {

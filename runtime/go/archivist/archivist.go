@@ -15,8 +15,8 @@ import (
 
 	"github.com/edwingeng/slog"
 	"github.com/pkg/errors"
-	"gitlab-ee.funplus.io/watcher/watcher/misc"
-	"gitlab-ee.funplus.io/watcher/watcher/misc/wtime"
+	"github.com/kingsgroupos/misc"
+	"github.com/kingsgroupos/misc/wtime"
 	"go.uber.org/atomic"
 )
 

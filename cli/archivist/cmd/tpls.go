@@ -7,8 +7,8 @@ import (
 	"strings"
 
 	"github.com/spf13/cobra"
-	"gitlab-ee.funplus.io/watcher/watcher/archivist/cli/archivist/g"
-	"gitlab-ee.funplus.io/watcher/watcher/misc"
+	"github.com/kingsgroupos/archivist/cli/archivist/g"
+	"github.com/kingsgroupos/misc"
 )
 
 const (

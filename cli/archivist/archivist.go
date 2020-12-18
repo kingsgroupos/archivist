@@ -18,7 +18,7 @@ import (
 	"math/rand"
 	"time"
 
-	"gitlab-ee.funplus.io/watcher/watcher/archivist/cli/archivist/cmd"
+	"github.com/kingsgroupos/archivist/cli/archivist/cmd"
 )
 
 func init() {

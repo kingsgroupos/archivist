@@ -7,9 +7,9 @@ import (
 	"testing"
 
 	"github.com/edwingeng/slog"
-	"gitlab-ee.funplus.io/watcher/watcher/archivist/runtime/go/archivist"
-	"gitlab-ee.funplus.io/watcher/watcher/archivist/runtime/go/overwrite/conf"
-	"gitlab-ee.funplus.io/watcher/watcher/misc"
+	"github.com/kingsgroupos/archivist/runtime/go/archivist"
+	"github.com/kingsgroupos/archivist/runtime/go/overwrite/conf"
+	"github.com/kingsgroupos/misc"
 )
 
 func Test_Overwrite(t *testing.T) {

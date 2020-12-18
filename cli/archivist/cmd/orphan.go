@@ -7,9 +7,9 @@ import (
 	"strings"
 
 	"github.com/spf13/cobra"
-	"gitlab-ee.funplus.io/watcher/watcher/misc"
-	"gitlab-ee.funplus.io/watcher/watcher/misc/variable"
-	"gitlab-ee.funplus.io/watcher/watcher/misc/wildcard"
+	"github.com/kingsgroupos/misc"
+	"github.com/kingsgroupos/misc/variable"
+	"github.com/kingsgroupos/misc/wildcard"
 )
 
 const (

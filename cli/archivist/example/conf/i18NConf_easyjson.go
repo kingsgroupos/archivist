@@ -7,7 +7,7 @@ import (
 	easyjson "github.com/mailru/easyjson"
 	jlexer "github.com/mailru/easyjson/jlexer"
 	jwriter "github.com/mailru/easyjson/jwriter"
-	archivist "gitlab-ee.funplus.io/watcher/watcher/archivist/runtime/go/archivist"
+	archivist "github.com/kingsgroupos/archivist/runtime/go/archivist"
 )
 
 // suppress unused package warning

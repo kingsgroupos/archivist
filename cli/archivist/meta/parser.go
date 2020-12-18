@@ -7,9 +7,9 @@ import (
 	"strings"
 
 	"github.com/pkg/errors"
-	"gitlab-ee.funplus.io/watcher/watcher/misc"
-	"gitlab-ee.funplus.io/watcher/watcher/misc/werr"
-	"gitlab-ee.funplus.io/watcher/watcher/misc/wildcard"
+	"github.com/kingsgroupos/misc"
+	"github.com/kingsgroupos/misc/werr"
+	"github.com/kingsgroupos/misc/wildcard"
 )
 
 type Parser struct {

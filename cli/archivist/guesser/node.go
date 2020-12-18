@@ -12,8 +12,8 @@ import (
 	"github.com/mohae/deepcopy"
 	"github.com/pkg/errors"
 	"github.com/xlab/treeprint"
-	"gitlab-ee.funplus.io/watcher/watcher/misc"
-	"gitlab-ee.funplus.io/watcher/watcher/misc/werr"
+	"github.com/kingsgroupos/misc"
+	"github.com/kingsgroupos/misc/werr"
 	"go.uber.org/atomic"
 )
 

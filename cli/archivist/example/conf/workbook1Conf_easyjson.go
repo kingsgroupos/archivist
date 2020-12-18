@@ -7,8 +7,8 @@ import (
 	easyjson "github.com/mailru/easyjson"
 	jlexer "github.com/mailru/easyjson/jlexer"
 	jwriter "github.com/mailru/easyjson/jwriter"
-	archivist "gitlab-ee.funplus.io/watcher/watcher/archivist/runtime/go/archivist"
-	wtime "gitlab-ee.funplus.io/watcher/watcher/misc/wtime"
+	archivist "github.com/kingsgroupos/archivist/runtime/go/archivist"
+	wtime "github.com/kingsgroupos/misc/wtime"
 	time "time"
 )
 

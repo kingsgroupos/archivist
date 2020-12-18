@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 
 	"github.com/pkg/errors"
-	"gitlab-ee.funplus.io/watcher/watcher/misc"
+	"github.com/kingsgroupos/misc"
 )
 
 const EnvName_ConfGroup = "WATCHER_CONF_GROUP"

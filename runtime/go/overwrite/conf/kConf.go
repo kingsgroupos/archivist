@@ -6,8 +6,8 @@ import (
 	"time"
 
 	"github.com/pkg/errors"
-	"gitlab-ee.funplus.io/watcher/watcher/archivist/runtime/go/archivist"
-	"gitlab-ee.funplus.io/watcher/watcher/misc/wtime"
+	"github.com/kingsgroupos/archivist/runtime/go/archivist"
+	"github.com/kingsgroupos/misc/wtime"
 )
 
 var (
