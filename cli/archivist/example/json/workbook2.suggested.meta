@@ -1,0 +1,7 @@
+/	map[int64]	
+/map[]	{}	
+/map[]/ID	int64	
+/map[]/MyBool	bool	布尔值
+/map[]/MyFloatVar	float64	浮点数
+/map[]/MyIntVar	int64	整数
+/map[]/MyStringVar	string	字符串

@@ -1,0 +1,5 @@
+/map[]/xx/[]/[]         ref@workbook2
+/map[]/x5/[]/x5a/[]/[]  ref@workbook2
+/map[]/x6/[]            map[string]         a long note, long long ...
+/map[]/x6/[]/*/[]/[]    ref@workbook2
+/map[]/x7               map[string]

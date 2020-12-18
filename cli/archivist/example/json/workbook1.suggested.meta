@@ -1,0 +1,19 @@
+/	map[int64]	
+/map[]	{}	
+/map[]/ID	int64	
+/map[]/MyBool	bool	布尔值
+/map[]/MyBoolArray/[]	bool	布尔数组
+/map[]/MyDatetime	datetime	时间
+/map[]/MyDatetimeArray/[]	datetime	时间数组
+/map[]/MyDuration	duration	时长
+/map[]/MyDurationArray/[]	duration	时长数组
+/map[]/MyFloat	float64	浮点数
+/map[]/MyFloatArray/[]	float64	浮点数数组
+/map[]/MyI18N	i18n	i18n字符串
+/map[]/MyI18NArray/[]	i18n	i18n字符串数组
+/map[]/MyInt	int64	整数
+/map[]/MyIntArray/[]	int64	整数数组
+/map[]/MyRef	ref@workbook2	外部引用
+/map[]/MyRefArray/[]	ref@workbook2	外部引用数组
+/map[]/MyString	string	字符串
+/map[]/MyStringArray/[]	string	字符串数组

@@ -1,0 +1,72 @@
+{
+	"10100": {
+		"ID": 10100,
+		"MyBool": true,
+		"MyFloatVar": 1.5,
+		"MyIntVar": 1,
+		"MyStringVar": "hello1"
+	},
+	"10101": {
+		"ID": 10101,
+		"MyBool": false,
+		"MyFloatVar": 2.5,
+		"MyIntVar": 2,
+		"MyStringVar": "hello2"
+	},
+	"10200": {
+		"ID": 10200,
+		"MyBool": true,
+		"MyFloatVar": 3.5,
+		"MyIntVar": 3,
+		"MyStringVar": "hello3"
+	},
+	"10201": {
+		"ID": 10201,
+		"MyBool": false,
+		"MyFloatVar": 4.5,
+		"MyIntVar": 4,
+		"MyStringVar": "hello4"
+	},
+	"10202": {
+		"ID": 10202,
+		"MyBool": true,
+		"MyFloatVar": 5.5,
+		"MyIntVar": 5,
+		"MyStringVar": "hello5"
+	},
+	"10300": {
+		"ID": 10300,
+		"MyBool": false,
+		"MyFloatVar": 6.5,
+		"MyIntVar": 6,
+		"MyStringVar": "hello6"
+	},
+	"10301": {
+		"ID": 10301,
+		"MyBool": true,
+		"MyFloatVar": 7.5,
+		"MyIntVar": 7,
+		"MyStringVar": "hello7"
+	},
+	"10302": {
+		"ID": 10302,
+		"MyBool": false,
+		"MyFloatVar": 8.5,
+		"MyIntVar": 8,
+		"MyStringVar": "hello8"
+	},
+	"10303": {
+		"ID": 10303,
+		"MyBool": true,
+		"MyFloatVar": 9.5,
+		"MyIntVar": 9,
+		"MyStringVar": "hello9"
+	},
+	"10500": {
+		"ID": 10500,
+		"MyBool": false,
+		"MyFloatVar": 10.5,
+		"MyIntVar": 10,
+		"MyStringVar": "hello10"
+	}
+}

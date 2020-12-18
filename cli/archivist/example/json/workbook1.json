@@ -1,0 +1,124 @@
+{
+	"100": {
+		"ID": 100,
+		"MyBool": true,
+		"MyBoolArray": [
+			true
+		],
+		"MyDatetime": "2018-01-02T00:00:00Z",
+		"MyDatetimeArray": [
+			"2019-01-02T00:00:00Z"
+		],
+		"MyDuration": "10ms",
+		"MyDurationArray": [
+			"20ms"
+		],
+		"MyFloat": 1.5,
+		"MyFloatArray": [],
+		"MyI18N": "workbook1:100:myi18n",
+		"MyI18NArray": [
+			"workbook1:100:myi18narray:0"
+		],
+		"MyInt": 1,
+		"MyIntArray": [
+			110
+		],
+		"MyRef": 10100,
+		"MyRefArray": [
+			10101
+		],
+		"MyString": "hello1",
+		"MyStringArray": [
+			"foo1a"
+		]
+	},
+	"200": {
+		"ID": 200,
+		"MyBool": false,
+		"MyBoolArray": [
+			true,
+			false
+		],
+		"MyDatetime": "0001-01-01T09:12:15Z",
+		"MyDatetimeArray": [
+			"0001-01-01T10:12:15Z",
+			"0001-01-01T11:12:15Z"
+		],
+		"MyDuration": "30s",
+		"MyDurationArray": [
+			"50s",
+			"3m0s"
+		],
+		"MyFloat": 2.5,
+		"MyFloatArray": [
+			212.5
+		],
+		"MyI18N": "workbook1:200:myi18n",
+		"MyI18NArray": [
+			"workbook1:200:myi18narray:0",
+			"workbook1:200:myi18narray:1"
+		],
+		"MyInt": 2,
+		"MyIntArray": [
+			210,
+			220
+		],
+		"MyRef": 10200,
+		"MyRefArray": [
+			10201,
+			10202
+		],
+		"MyString": "hello2",
+		"MyStringArray": []
+	},
+	"300": {
+		"ID": 300,
+		"MyBool": true,
+		"MyBoolArray": [
+			true,
+			false,
+			true
+		],
+		"MyDatetime": "2018-01-02T12:15:30Z",
+		"MyDatetimeArray": [
+			"2018-01-02T12:15:30Z",
+			"2018-01-02T15:15:30Z",
+			"2018-01-02T20:15:30Z"
+		],
+		"MyDuration": "1h0m0s",
+		"MyDurationArray": [
+			"1h0m0s",
+			"1h0m0s",
+			"168h0m0s"
+		],
+		"MyFloat": 3.5,
+		"MyFloatArray": [
+			313.5,
+			323.5
+		],
+		"MyI18N": "",
+		"MyI18NArray": [
+			"workbook1:300:myi18narray:0",
+			"workbook1:300:myi18narray:1",
+			"workbook1:300:myi18narray:2"
+		],
+		"MyInt": 0,
+		"MyIntArray": [
+			310,
+			320,
+			330
+		],
+		"MyRef": 10300,
+		"MyRefArray": [
+			10301,
+			10302,
+			10303
+		],
+		"MyString": "hello3",
+		"MyStringArray": [
+			"foo3a",
+			"foo3b",
+			"foo3c"
+		]
+	}
+}

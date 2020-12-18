@@ -1,0 +1,10 @@
+{
+	"workbook1:100:MyI18N": "hello",
+	"workbook1:100:MyI18NArray:0": "foo1a",
+	"workbook1:200:MyI18N": "world\\\\x",
+	"workbook1:200:MyI18NArray:0": "",
+	"workbook1:200:MyI18NArray:1": "foo2b",
+	"workbook1:300:MyI18NArray:0": "foo3a",
+	"workbook1:300:MyI18NArray:1": "中文",
+	"workbook1:300:MyI18NArray:2": "foo3c"
+}
