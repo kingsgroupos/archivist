@@ -32,11 +32,7 @@ function printUsage() {
     $colorful && tput setaf 7
 }
 
-NEWPATH=`../../../../privatePath.sh`
-[[ $? -ne 0 ]] && exit 1
-PATH="$NEWPATH"
-
-WATCHER_CONF_GROUP=develop WATCHER_CONF_SUBGROUP=dolores ../../../../script/js2json.sh "`pwd`/json"
+WATCHER_CONF_GROUP=develop WATCHER_CONF_SUBGROUP=dolores ../../../cli/script/js2json.sh "`pwd`/json"
 echo
 
 go run ../../../cli/archivist/archivist.go generate --outputDir=conf --pkg=conf --x-easyjson "$@" 'json/*.json' 'json/*.js'

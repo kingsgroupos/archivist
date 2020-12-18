@@ -32,10 +32,6 @@ function printUsage() {
     $colorful && tput setaf 7
 }
 
-NEWPATH=`../../../../privatePath.sh`
-[[ $? -ne 0 ]] && exit 1
-PATH="$NEWPATH"
-
 go run ../archivist.go orphan json conf go
 [[ $? -ne 0 ]] && exit 1
 
