@@ -17,7 +17,7 @@ var (
 	_ easyjson.Marshaler
 )
 
-func easyjsonA4726a31DecodeGitlabEeFunplusIoWatcherWatcherArchivistRuntimeGoOverwriteConf(in *jlexer.Lexer, out *AConf) {
+func easyjsonA4726a31DecodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(in *jlexer.Lexer, out *AConf) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -52,7 +52,7 @@ func easyjsonA4726a31DecodeGitlabEeFunplusIoWatcherWatcherArchivistRuntimeGoOver
 		in.Consumed()
 	}
 }
-func easyjsonA4726a31EncodeGitlabEeFunplusIoWatcherWatcherArchivistRuntimeGoOverwriteConf(out *jwriter.Writer, in AConf) {
+func easyjsonA4726a31EncodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(out *jwriter.Writer, in AConf) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -77,23 +77,23 @@ func easyjsonA4726a31EncodeGitlabEeFunplusIoWatcherWatcherArchivistRuntimeGoOver
 // MarshalJSON supports json.Marshaler interface
 func (v AConf) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjsonA4726a31EncodeGitlabEeFunplusIoWatcherWatcherArchivistRuntimeGoOverwriteConf(&w, v)
+	easyjsonA4726a31EncodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v AConf) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjsonA4726a31EncodeGitlabEeFunplusIoWatcherWatcherArchivistRuntimeGoOverwriteConf(w, v)
+	easyjsonA4726a31EncodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *AConf) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjsonA4726a31DecodeGitlabEeFunplusIoWatcherWatcherArchivistRuntimeGoOverwriteConf(&r, v)
+	easyjsonA4726a31DecodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *AConf) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjsonA4726a31DecodeGitlabEeFunplusIoWatcherWatcherArchivistRuntimeGoOverwriteConf(l, v)
+	easyjsonA4726a31DecodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(l, v)
 }

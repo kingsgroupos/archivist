@@ -17,7 +17,7 @@ var (
 	_ easyjson.Marshaler
 )
 
-func easyjsonB418addaDecodeGitlabEeFunplusIoWatcherWatcherArchivistRuntimeGoOverwriteConf(in *jlexer.Lexer, out *BConf) {
+func easyjsonB418addaDecodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(in *jlexer.Lexer, out *BConf) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -52,7 +52,7 @@ func easyjsonB418addaDecodeGitlabEeFunplusIoWatcherWatcherArchivistRuntimeGoOver
 		in.Consumed()
 	}
 }
-func easyjsonB418addaEncodeGitlabEeFunplusIoWatcherWatcherArchivistRuntimeGoOverwriteConf(out *jwriter.Writer, in BConf) {
+func easyjsonB418addaEncodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(out *jwriter.Writer, in BConf) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -77,23 +77,23 @@ func easyjsonB418addaEncodeGitlabEeFunplusIoWatcherWatcherArchivistRuntimeGoOver
 // MarshalJSON supports json.Marshaler interface
 func (v BConf) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjsonB418addaEncodeGitlabEeFunplusIoWatcherWatcherArchivistRuntimeGoOverwriteConf(&w, v)
+	easyjsonB418addaEncodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v BConf) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjsonB418addaEncodeGitlabEeFunplusIoWatcherWatcherArchivistRuntimeGoOverwriteConf(w, v)
+	easyjsonB418addaEncodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *BConf) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjsonB418addaDecodeGitlabEeFunplusIoWatcherWatcherArchivistRuntimeGoOverwriteConf(&r, v)
+	easyjsonB418addaDecodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *BConf) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjsonB418addaDecodeGitlabEeFunplusIoWatcherWatcherArchivistRuntimeGoOverwriteConf(l, v)
+	easyjsonB418addaDecodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(l, v)
 }

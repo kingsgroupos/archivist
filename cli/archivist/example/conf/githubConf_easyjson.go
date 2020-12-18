@@ -17,7 +17,7 @@ var (
 	_ easyjson.Marshaler
 )
 
-func easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf(in *jlexer.Lexer, out *GithubConf_570840785) {
+func easyjsonE232f50bDecodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf(in *jlexer.Lexer, out *GithubConf_570840785) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -52,7 +52,7 @@ func easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistE
 		in.Consumed()
 	}
 }
-func easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf(out *jwriter.Writer, in GithubConf_570840785) {
+func easyjsonE232f50bEncodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf(out *jwriter.Writer, in GithubConf_570840785) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -77,27 +77,27 @@ func easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistE
 // MarshalJSON supports json.Marshaler interface
 func (v GithubConf_570840785) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf(&w, v)
+	easyjsonE232f50bEncodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v GithubConf_570840785) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf(w, v)
+	easyjsonE232f50bEncodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *GithubConf_570840785) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf(&r, v)
+	easyjsonE232f50bDecodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GithubConf_570840785) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf(l, v)
+	easyjsonE232f50bDecodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf(l, v)
 }
-func easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf1(in *jlexer.Lexer, out *GithubConf_433431318) {
+func easyjsonE232f50bDecodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf1(in *jlexer.Lexer, out *GithubConf_433431318) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -160,7 +160,7 @@ func easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistE
 		in.Consumed()
 	}
 }
-func easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf1(out *jwriter.Writer, in GithubConf_433431318) {
+func easyjsonE232f50bEncodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf1(out *jwriter.Writer, in GithubConf_433431318) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -255,27 +255,27 @@ func easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistE
 // MarshalJSON supports json.Marshaler interface
 func (v GithubConf_433431318) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf1(&w, v)
+	easyjsonE232f50bEncodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf1(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v GithubConf_433431318) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf1(w, v)
+	easyjsonE232f50bEncodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf1(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *GithubConf_433431318) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf1(&r, v)
+	easyjsonE232f50bDecodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf1(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GithubConf_433431318) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf1(l, v)
+	easyjsonE232f50bDecodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf1(l, v)
 }
-func easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf2(in *jlexer.Lexer, out *GithubConf_267759930) {
+func easyjsonE232f50bDecodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf2(in *jlexer.Lexer, out *GithubConf_267759930) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -376,7 +376,7 @@ func easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistE
 		in.Consumed()
 	}
 }
-func easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf2(out *jwriter.Writer, in GithubConf_267759930) {
+func easyjsonE232f50bEncodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf2(out *jwriter.Writer, in GithubConf_267759930) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -534,27 +534,27 @@ func easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistE
 // MarshalJSON supports json.Marshaler interface
 func (v GithubConf_267759930) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf2(&w, v)
+	easyjsonE232f50bEncodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf2(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v GithubConf_267759930) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf2(w, v)
+	easyjsonE232f50bEncodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf2(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *GithubConf_267759930) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf2(&r, v)
+	easyjsonE232f50bDecodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf2(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GithubConf_267759930) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf2(l, v)
+	easyjsonE232f50bDecodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf2(l, v)
 }
-func easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf3(in *jlexer.Lexer, out *GithubConf_249756142) {
+func easyjsonE232f50bDecodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf3(in *jlexer.Lexer, out *GithubConf_249756142) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -589,7 +589,7 @@ func easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistE
 		in.Consumed()
 	}
 }
-func easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf3(out *jwriter.Writer, in GithubConf_249756142) {
+func easyjsonE232f50bEncodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf3(out *jwriter.Writer, in GithubConf_249756142) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -614,27 +614,27 @@ func easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistE
 // MarshalJSON supports json.Marshaler interface
 func (v GithubConf_249756142) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf3(&w, v)
+	easyjsonE232f50bEncodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf3(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v GithubConf_249756142) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf3(w, v)
+	easyjsonE232f50bEncodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf3(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *GithubConf_249756142) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf3(&r, v)
+	easyjsonE232f50bDecodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf3(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GithubConf_249756142) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf3(l, v)
+	easyjsonE232f50bDecodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf3(l, v)
 }
-func easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf4(in *jlexer.Lexer, out *GithubConf_240645118) {
+func easyjsonE232f50bDecodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf4(in *jlexer.Lexer, out *GithubConf_240645118) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -697,7 +697,7 @@ func easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistE
 		in.Consumed()
 	}
 }
-func easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf4(out *jwriter.Writer, in GithubConf_240645118) {
+func easyjsonE232f50bEncodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf4(out *jwriter.Writer, in GithubConf_240645118) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -792,27 +792,27 @@ func easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistE
 // MarshalJSON supports json.Marshaler interface
 func (v GithubConf_240645118) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf4(&w, v)
+	easyjsonE232f50bEncodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf4(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v GithubConf_240645118) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf4(w, v)
+	easyjsonE232f50bEncodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf4(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *GithubConf_240645118) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf4(&r, v)
+	easyjsonE232f50bDecodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf4(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GithubConf_240645118) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf4(l, v)
+	easyjsonE232f50bDecodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf4(l, v)
 }
-func easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf5(in *jlexer.Lexer, out *GithubConf_229071146) {
+func easyjsonE232f50bDecodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf5(in *jlexer.Lexer, out *GithubConf_229071146) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -875,7 +875,7 @@ func easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistE
 		in.Consumed()
 	}
 }
-func easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf5(out *jwriter.Writer, in GithubConf_229071146) {
+func easyjsonE232f50bEncodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf5(out *jwriter.Writer, in GithubConf_229071146) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -970,27 +970,27 @@ func easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistE
 // MarshalJSON supports json.Marshaler interface
 func (v GithubConf_229071146) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf5(&w, v)
+	easyjsonE232f50bEncodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf5(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v GithubConf_229071146) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf5(w, v)
+	easyjsonE232f50bEncodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf5(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *GithubConf_229071146) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf5(&r, v)
+	easyjsonE232f50bDecodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf5(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GithubConf_229071146) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf5(l, v)
+	easyjsonE232f50bDecodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf5(l, v)
 }
-func easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf6(in *jlexer.Lexer, out *GithubConf_216391827) {
+func easyjsonE232f50bDecodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf6(in *jlexer.Lexer, out *GithubConf_216391827) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -1053,7 +1053,7 @@ func easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistE
 		in.Consumed()
 	}
 }
-func easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf6(out *jwriter.Writer, in GithubConf_216391827) {
+func easyjsonE232f50bEncodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf6(out *jwriter.Writer, in GithubConf_216391827) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -1148,27 +1148,27 @@ func easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistE
 // MarshalJSON supports json.Marshaler interface
 func (v GithubConf_216391827) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf6(&w, v)
+	easyjsonE232f50bEncodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf6(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v GithubConf_216391827) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf6(w, v)
+	easyjsonE232f50bEncodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf6(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *GithubConf_216391827) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf6(&r, v)
+	easyjsonE232f50bDecodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf6(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GithubConf_216391827) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf6(l, v)
+	easyjsonE232f50bDecodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf6(l, v)
 }
-func easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf7(in *jlexer.Lexer, out *GithubConf_2094552156) {
+func easyjsonE232f50bDecodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf7(in *jlexer.Lexer, out *GithubConf_2094552156) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -1203,7 +1203,7 @@ func easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistE
 		in.Consumed()
 	}
 }
-func easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf7(out *jwriter.Writer, in GithubConf_2094552156) {
+func easyjsonE232f50bEncodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf7(out *jwriter.Writer, in GithubConf_2094552156) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -1228,27 +1228,27 @@ func easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistE
 // MarshalJSON supports json.Marshaler interface
 func (v GithubConf_2094552156) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf7(&w, v)
+	easyjsonE232f50bEncodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf7(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v GithubConf_2094552156) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf7(w, v)
+	easyjsonE232f50bEncodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf7(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *GithubConf_2094552156) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf7(&r, v)
+	easyjsonE232f50bDecodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf7(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GithubConf_2094552156) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf7(l, v)
+	easyjsonE232f50bDecodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf7(l, v)
 }
-func easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf8(in *jlexer.Lexer, out *GithubConf_2003163775) {
+func easyjsonE232f50bDecodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf8(in *jlexer.Lexer, out *GithubConf_2003163775) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -1349,7 +1349,7 @@ func easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistE
 		in.Consumed()
 	}
 }
-func easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf8(out *jwriter.Writer, in GithubConf_2003163775) {
+func easyjsonE232f50bEncodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf8(out *jwriter.Writer, in GithubConf_2003163775) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -1507,27 +1507,27 @@ func easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistE
 // MarshalJSON supports json.Marshaler interface
 func (v GithubConf_2003163775) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf8(&w, v)
+	easyjsonE232f50bEncodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf8(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v GithubConf_2003163775) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf8(w, v)
+	easyjsonE232f50bEncodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf8(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *GithubConf_2003163775) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf8(&r, v)
+	easyjsonE232f50bDecodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf8(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GithubConf_2003163775) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConfGithubConf8(l, v)
+	easyjsonE232f50bDecodeGithubComKingsgrouposArchivistCliArchivistExampleConfGithubConf8(l, v)
 }
-func easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConf(in *jlexer.Lexer, out *GithubConf) {
+func easyjsonE232f50bDecodeGithubComKingsgrouposArchivistCliArchivistExampleConf(in *jlexer.Lexer, out *GithubConf) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -1660,7 +1660,7 @@ func easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistE
 		in.Consumed()
 	}
 }
-func easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConf(out *jwriter.Writer, in GithubConf) {
+func easyjsonE232f50bEncodeGithubComKingsgrouposArchivistCliArchivistExampleConf(out *jwriter.Writer, in GithubConf) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -1850,23 +1850,23 @@ func easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistE
 // MarshalJSON supports json.Marshaler interface
 func (v GithubConf) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConf(&w, v)
+	easyjsonE232f50bEncodeGithubComKingsgrouposArchivistCliArchivistExampleConf(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v GithubConf) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjsonE232f50bEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConf(w, v)
+	easyjsonE232f50bEncodeGithubComKingsgrouposArchivistCliArchivistExampleConf(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *GithubConf) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConf(&r, v)
+	easyjsonE232f50bDecodeGithubComKingsgrouposArchivistCliArchivistExampleConf(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *GithubConf) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjsonE232f50bDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConf(l, v)
+	easyjsonE232f50bDecodeGithubComKingsgrouposArchivistCliArchivistExampleConf(l, v)
 }

@@ -17,7 +17,7 @@ var (
 	_ easyjson.Marshaler
 )
 
-func easyjsonF889220fDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConf(in *jlexer.Lexer, out *FloatsConf) {
+func easyjsonF889220fDecodeGithubComKingsgrouposArchivistCliArchivistExampleConf(in *jlexer.Lexer, out *FloatsConf) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -50,7 +50,7 @@ func easyjsonF889220fDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistE
 		in.Consumed()
 	}
 }
-func easyjsonF889220fEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConf(out *jwriter.Writer, in FloatsConf) {
+func easyjsonF889220fEncodeGithubComKingsgrouposArchivistCliArchivistExampleConf(out *jwriter.Writer, in FloatsConf) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -70,23 +70,23 @@ func easyjsonF889220fEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistE
 // MarshalJSON supports json.Marshaler interface
 func (v FloatsConf) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjsonF889220fEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConf(&w, v)
+	easyjsonF889220fEncodeGithubComKingsgrouposArchivistCliArchivistExampleConf(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v FloatsConf) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjsonF889220fEncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConf(w, v)
+	easyjsonF889220fEncodeGithubComKingsgrouposArchivistCliArchivistExampleConf(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *FloatsConf) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjsonF889220fDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConf(&r, v)
+	easyjsonF889220fDecodeGithubComKingsgrouposArchivistCliArchivistExampleConf(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *FloatsConf) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjsonF889220fDecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConf(l, v)
+	easyjsonF889220fDecodeGithubComKingsgrouposArchivistCliArchivistExampleConf(l, v)
 }

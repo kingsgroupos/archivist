@@ -4,11 +4,11 @@ package conf
 
 import (
 	json "encoding/json"
+	archivist "github.com/kingsgroupos/archivist/runtime/go/archivist"
+	wtime "github.com/kingsgroupos/misc/wtime"
 	easyjson "github.com/mailru/easyjson"
 	jlexer "github.com/mailru/easyjson/jlexer"
 	jwriter "github.com/mailru/easyjson/jwriter"
-	archivist "github.com/kingsgroupos/archivist/runtime/go/archivist"
-	wtime "github.com/kingsgroupos/misc/wtime"
 	time "time"
 )
 
@@ -20,7 +20,7 @@ var (
 	_ easyjson.Marshaler
 )
 
-func easyjsonE17c641DecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConf(in *jlexer.Lexer, out *Workbook1ConfItem) {
+func easyjsonE17c641DecodeGithubComKingsgrouposArchivistCliArchivistExampleConf(in *jlexer.Lexer, out *Workbook1ConfItem) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -259,7 +259,7 @@ func easyjsonE17c641DecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistEx
 		in.Consumed()
 	}
 }
-func easyjsonE17c641EncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConf(out *jwriter.Writer, in Workbook1ConfItem) {
+func easyjsonE17c641EncodeGithubComKingsgrouposArchivistCliArchivistExampleConf(out *jwriter.Writer, in Workbook1ConfItem) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -442,27 +442,27 @@ func easyjsonE17c641EncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistEx
 // MarshalJSON supports json.Marshaler interface
 func (v Workbook1ConfItem) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjsonE17c641EncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConf(&w, v)
+	easyjsonE17c641EncodeGithubComKingsgrouposArchivistCliArchivistExampleConf(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v Workbook1ConfItem) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjsonE17c641EncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConf(w, v)
+	easyjsonE17c641EncodeGithubComKingsgrouposArchivistCliArchivistExampleConf(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *Workbook1ConfItem) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjsonE17c641DecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConf(&r, v)
+	easyjsonE17c641DecodeGithubComKingsgrouposArchivistCliArchivistExampleConf(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *Workbook1ConfItem) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjsonE17c641DecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConf(l, v)
+	easyjsonE17c641DecodeGithubComKingsgrouposArchivistCliArchivistExampleConf(l, v)
 }
-func easyjsonE17c641DecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConf1(in *jlexer.Lexer, out *Workbook1Conf) {
+func easyjsonE17c641DecodeGithubComKingsgrouposArchivistCliArchivistExampleConf1(in *jlexer.Lexer, out *Workbook1Conf) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		in.Skip()
@@ -491,7 +491,7 @@ func easyjsonE17c641DecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistEx
 		in.Consumed()
 	}
 }
-func easyjsonE17c641EncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConf1(out *jwriter.Writer, in Workbook1Conf) {
+func easyjsonE17c641EncodeGithubComKingsgrouposArchivistCliArchivistExampleConf1(out *jwriter.Writer, in Workbook1Conf) {
 	if in == nil && (out.Flags&jwriter.NilMapAsEmpty) == 0 {
 		out.RawString(`null`)
 	} else {
@@ -518,23 +518,23 @@ func easyjsonE17c641EncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistEx
 // MarshalJSON supports json.Marshaler interface
 func (v Workbook1Conf) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjsonE17c641EncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConf1(&w, v)
+	easyjsonE17c641EncodeGithubComKingsgrouposArchivistCliArchivistExampleConf1(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v Workbook1Conf) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjsonE17c641EncodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConf1(w, v)
+	easyjsonE17c641EncodeGithubComKingsgrouposArchivistCliArchivistExampleConf1(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *Workbook1Conf) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjsonE17c641DecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConf1(&r, v)
+	easyjsonE17c641DecodeGithubComKingsgrouposArchivistCliArchivistExampleConf1(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *Workbook1Conf) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjsonE17c641DecodeGitlabEeFunplusIoWatcherWatcherArchivistCliArchivistExampleConf1(l, v)
+	easyjsonE17c641DecodeGithubComKingsgrouposArchivistCliArchivistExampleConf1(l, v)
 }

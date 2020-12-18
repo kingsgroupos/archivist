@@ -5,9 +5,9 @@ package conf
 import (
 	"time"
 
-	"github.com/pkg/errors"
 	"github.com/kingsgroupos/archivist/runtime/go/archivist"
 	"github.com/kingsgroupos/misc/wtime"
+	"github.com/pkg/errors"
 )
 
 var (
