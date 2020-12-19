@@ -569,7 +569,7 @@ func (this *generateCmdT) genEasyJSONRelatedCode(allFiles []string) {
 		fName := variable.ToCamel(fBase[:len(fBase)-extLen]) + this.structNameSuffix + ".go"
 		fPath := filepath.Join(this.outputDir, fName)
 		a1 = append(a1, fPath)
-		easyf := fPath[:len(fPath)-3] + "_easyjson.go"
+		easyf := fPath[:len(fPath)-3] + easyjsonSuffix
 		a2 = append(a2, easyf)
 		_ = os.Remove(easyf)
 	}
@@ -596,7 +596,15 @@ func (this *generateCmdT) genCodeWithEasyjson(files ...string) {
 	args := append([]string{"-all"}, files...)
 	easyjsonPath := this.easyjsonPath
 	if easyjsonPath == "" {
-		easyjsonPath = "easyjson"
+		exePath := os.Args[0]
+		absPath, err := filepath.Abs(exePath)
+		if err != nil {
+			panic(err)
+		}
+		easyjsonPath = filepath.Join(filepath.Dir(absPath), "easyjson")
+		if err := misc.FindFile(easyjsonPath); err != nil {
+			easyjsonPath = "easyjson"
+		}
 	}
 	easyjson := exec.Command(easyjsonPath, args...)
 	easyjson.Stdout = os.Stdout
