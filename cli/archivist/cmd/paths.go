@@ -7,8 +7,8 @@ import (
 	"strings"
 	"text/tabwriter"
 
-	"github.com/spf13/cobra"
 	"github.com/kingsgroupos/archivist/cli/archivist/guesser"
+	"github.com/spf13/cobra"
 )
 
 var pathsCmd pathsCmdT

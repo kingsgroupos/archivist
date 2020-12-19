@@ -17,8 +17,8 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/spf13/cobra"
 	"github.com/kingsgroupos/archivist/cli/archivist/g"
+	"github.com/spf13/cobra"
 )
 
 // versionCmd represents the version command

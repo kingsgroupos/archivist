@@ -11,12 +11,12 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/pkg/errors"
-	"github.com/spf13/cobra"
 	"github.com/kingsgroupos/archivist/cli/archivist/guesser"
 	"github.com/kingsgroupos/archivist/cli/archivist/meta"
 	"github.com/kingsgroupos/misc"
 	"github.com/kingsgroupos/misc/variable"
+	"github.com/pkg/errors"
+	"github.com/spf13/cobra"
 )
 
 type sharedFlags struct {

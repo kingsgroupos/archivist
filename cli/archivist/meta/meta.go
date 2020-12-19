@@ -4,8 +4,8 @@ import (
 	"bytes"
 	"strings"
 
-	"github.com/pkg/errors"
 	"github.com/kingsgroupos/misc"
+	"github.com/pkg/errors"
 )
 
 type Meta struct {

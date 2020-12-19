@@ -14,9 +14,9 @@ import (
 	"time"
 
 	"github.com/edwingeng/slog"
-	"github.com/pkg/errors"
 	"github.com/kingsgroupos/misc"
 	"github.com/kingsgroupos/misc/wtime"
+	"github.com/pkg/errors"
 	"go.uber.org/atomic"
 )
 

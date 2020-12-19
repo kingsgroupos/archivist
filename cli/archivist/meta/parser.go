@@ -6,10 +6,10 @@ import (
 	"io/ioutil"
 	"strings"
 
-	"github.com/pkg/errors"
 	"github.com/kingsgroupos/misc"
 	"github.com/kingsgroupos/misc/werr"
 	"github.com/kingsgroupos/misc/wildcard"
+	"github.com/pkg/errors"
 )
 
 type Parser struct {

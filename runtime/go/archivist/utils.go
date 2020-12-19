@@ -7,8 +7,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/pkg/errors"
 	"github.com/kingsgroupos/misc"
+	"github.com/pkg/errors"
 )
 
 const EnvName_ConfGroup = "WATCHER_CONF_GROUP"

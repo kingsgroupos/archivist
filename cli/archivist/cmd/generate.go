@@ -13,12 +13,12 @@ import (
 	"text/template"
 
 	"github.com/edwingeng/deque"
-	"github.com/pkg/errors"
-	"github.com/spf13/cobra"
 	"github.com/kingsgroupos/archivist/cli/archivist/guesser"
 	"github.com/kingsgroupos/misc"
 	"github.com/kingsgroupos/misc/chksum"
 	"github.com/kingsgroupos/misc/variable"
+	"github.com/pkg/errors"
+	"github.com/spf13/cobra"
 )
 
 var generateCmd generateCmdT

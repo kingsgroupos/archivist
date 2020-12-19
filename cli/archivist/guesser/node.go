@@ -9,11 +9,11 @@ import (
 	"strings"
 
 	"github.com/edwingeng/deque"
+	"github.com/kingsgroupos/misc"
+	"github.com/kingsgroupos/misc/werr"
 	"github.com/mohae/deepcopy"
 	"github.com/pkg/errors"
 	"github.com/xlab/treeprint"
-	"github.com/kingsgroupos/misc"
-	"github.com/kingsgroupos/misc/werr"
 	"go.uber.org/atomic"
 )
 
