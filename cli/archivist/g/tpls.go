@@ -392,6 +392,7 @@ func (this *Collection) RevRefGraph() map[string][]string {
 package {{.Pkg}}
 
 func (this *Collection) CompatibleVersions() []string {
+	// return nil if you do not need backward compatibility check
 	panic("not implemented yet")
 }
 
