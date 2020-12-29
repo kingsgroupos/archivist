@@ -277,7 +277,7 @@ func (this *generateCmdT) genStructRelatedCode(allFiles []string) {
 
 	var jsonFiles []string
 	var primaryStructNames []string
-	var primaryStructNameMap = make(map[string]struct{})
+	var primaryStructNameMap = make(map[string]int)
 	for _, file := range allFiles {
 		basename1 := filepath.Base(file)
 		var ext, jsonFile string
@@ -295,13 +295,14 @@ func (this *generateCmdT) genStructRelatedCode(allFiles []string) {
 		jsonFiles = append(jsonFiles, jsonFile)
 		primaryStructName := basename2 + this.structNameSuffix
 		primaryStructNames = append(primaryStructNames, primaryStructName)
-		primaryStructNameMap[primaryStructName] = struct{}{}
+		primaryStructNameMap[primaryStructName] = 0
 	}
 	if len(jsonFiles) == 0 || len(primaryStructNames) == 0 {
 		panic("impossible")
 	}
 
 	revRefGraph := make(map[string][]string)
+	var guessers []*guesser.Guesser
 	for i, file := range allFiles {
 		fmt.Printf("Processing %s...\n", file)
 		var g *guesser.Guesser
@@ -326,6 +327,7 @@ func (this *generateCmdT) genStructRelatedCode(allFiles []string) {
 			fmt.Println(g.Root.Tree())
 		}
 
+		guessers = append(guessers, g)
 		var newTypeNodes []*guesser.Node
 		var newTypes = make(map[*guesser.Node]string)
 		primaryStructName := primaryStructNames[i]
@@ -403,6 +405,29 @@ func (this *generateCmdT) genStructRelatedCode(allFiles []string) {
 			}
 			return true
 		})
+	}
+
+	if guessers == nil {
+		panic("impossible")
+	}
+	for i, structName := range primaryStructNames {
+		if primaryStructNameMap[structName] > 0 {
+			g := guessers[i]
+			var err error
+			if g.Root.ValueKind != guesser.ValueKind_Map {
+				err = fmt.Errorf("%s cannot be referenced for it is NOT a map",
+					filepath.Base(allFiles[i]))
+			} else if g.Root.Value.MapKey != "int64" {
+				err = fmt.Errorf("%s cannot be referenced for its key type is NOT int64",
+					filepath.Base(allFiles[i]))
+			} else if valNode := g.Root.Value.MapValue; valNode.ValueKind != guesser.ValueKind_Struct {
+				err = fmt.Errorf("%s cannot be referenced for its value type is NOT struct",
+					filepath.Base(allFiles[i]))
+			}
+			if err != nil {
+				panic(err)
+			}
+		}
 	}
 
 	this.genCollectionFile(jsonFiles, primaryStructNames, revRefGraph)

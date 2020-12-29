@@ -106,7 +106,7 @@ func validateFloatPrecision(n int) {
 	guesser.Epsilon = math.Pow(10, -float64(n))
 }
 
-func (this *sharedFlags) buildGuesser(jsonFile string, primaryStructNameMap map[string]struct{}, structNameSuffix string) *guesser.Guesser {
+func (this *sharedFlags) buildGuesser(jsonFile string, primaryStructNameMap map[string]int, structNameSuffix string) *guesser.Guesser {
 	var err error
 	matcher := meta.NewMultiMatcher()
 	err = matcher.ParseMetaFiles(jsonFile)
@@ -124,7 +124,7 @@ func (this *sharedFlags) buildGuesser(jsonFile string, primaryStructNameMap map[
 	return this.buildGuesserImpl(g, matcher, primaryStructNameMap, structNameSuffix)
 }
 
-func (this *sharedFlags) buildGuesserWithJavascriptFile(data []byte, file string, primaryStructNameMap map[string]struct{}, structNameSuffix string) *guesser.Guesser {
+func (this *sharedFlags) buildGuesserWithJavascriptFile(data []byte, file string, primaryStructNameMap map[string]int, structNameSuffix string) *guesser.Guesser {
 	var err error
 	matcher := meta.NewMultiMatcher()
 	jsonFile := strings.TrimSuffix(file, ".js") + ".json"
@@ -143,7 +143,7 @@ func (this *sharedFlags) buildGuesserWithJavascriptFile(data []byte, file string
 	return this.buildGuesserImpl(g, matcher, primaryStructNameMap, structNameSuffix)
 }
 
-func (this *sharedFlags) buildGuesserImpl(g *guesser.Guesser, matcher *meta.MultiMatcher, primaryStructNameMap map[string]struct{}, structNameSuffix string) *guesser.Guesser {
+func (this *sharedFlags) buildGuesserImpl(g *guesser.Guesser, matcher *meta.MultiMatcher, primaryStructNameMap map[string]int, structNameSuffix string) *guesser.Guesser {
 	g.Root.Traverse(func(node *guesser.Node) bool {
 		if mt, ok := matcher.Match(node); ok {
 			node.Notes = mt.Notes
@@ -182,7 +182,7 @@ func (this *sharedFlags) buildGuesserImpl(g *guesser.Guesser, matcher *meta.Mult
 	return g
 }
 
-func (this *sharedFlags) changeType(node *guesser.Node, mt *meta.Meta, primaryStructNameMap map[string]struct{}, structNameSuffix string) error {
+func (this *sharedFlags) changeType(node *guesser.Node, mt *meta.Meta, primaryStructNameMap map[string]int, structNameSuffix string) error {
 	const errFmt = "incompatible type detected. path: %s, actualType: %s, newType: %s"
 	switch node.ValueKind {
 	case guesser.ValueKind_Primitive:
@@ -220,6 +220,7 @@ func (this *sharedFlags) changeType(node *guesser.Node, mt *meta.Meta, primarySt
 						if _, ok := primaryStructNameMap[camelRef]; !ok {
 							return errors.Errorf("unknown reference: %s", ref)
 						}
+						primaryStructNameMap[camelRef]++
 					}
 					allowed := func() bool {
 						strs := misc.Split(node.Path(), "/")
