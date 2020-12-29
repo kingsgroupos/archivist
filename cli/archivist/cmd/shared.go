@@ -58,7 +58,7 @@ type sharedFlags struct {
 }
 
 func (this *sharedFlags) registerSharedFlags(cmd *cobra.Command) {
-	const allowedIntTypes = "int, int8, int16, int32, int64, uint, uint8, uint16, uint32, or uint64"
+	const allowedIntTypes = "int, int8, int16, int32, int64, uint, uint8, uint16 or uint32"
 	cmd.Flags().StringVar(&this.intType,
 		"intType", "int64", "the default integer type, must be "+allowedIntTypes)
 	cmd.Flags().StringVar(&this.floatType,
@@ -84,7 +84,6 @@ func validateIntType(intType string) {
 	case "uint8":
 	case "uint16":
 	case "uint32":
-	case "uint64":
 	default:
 		panic(fmt.Sprintf("invalid --intType: %s", intType))
 	}
@@ -206,7 +205,6 @@ func (this *sharedFlags) changeType(node *guesser.Node, mt *meta.Meta, primarySt
 			case "uint8":
 			case "uint16":
 			case "uint32":
-			case "uint64":
 			case "float32":
 			case "float64":
 			default:
@@ -287,7 +285,6 @@ func (this *sharedFlags) changeType(node *guesser.Node, mt *meta.Meta, primarySt
 		case "map[uint8]":
 		case "map[uint16]":
 		case "map[uint32]":
-		case "map[uint64]":
 		case "map[string]":
 		default:
 			return errors.Errorf(errFmt, mt.Path, nodeType, mt.NewType)
@@ -317,7 +314,6 @@ func (this *sharedFlags) changeType(node *guesser.Node, mt *meta.Meta, primarySt
 		case "uint8":
 		case "uint16":
 		case "uint32":
-		case "uint64":
 		case "float32":
 		case "float64":
 		case "string":
