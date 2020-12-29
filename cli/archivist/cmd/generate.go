@@ -82,8 +82,6 @@ func init() {
 		"x-easyjson", false, "generate easyjson related code")
 	cmd.Flags().StringVar(&generateCmd.structNameSuffix,
 		"structNameSuffix", "Conf", "name suffix of struct")
-	cmd.Flags().StringVar(&generateCmd.easyjsonPath,
-		"easyjsonPath", "", "path of the easyjson executable file")
 
 	generateCmd.registerSharedFlags(cmd)
 }
@@ -99,7 +97,6 @@ type generateCmdT struct {
 	collectionExtension bool
 	easyjson            bool
 	structNameSuffix    string
-	easyjsonPath        string
 
 	sharedFlags
 
@@ -624,17 +621,14 @@ func (this *generateCmdT) whichCmd(name string) {
 
 func (this *generateCmdT) genCodeWithEasyjson(files ...string) {
 	args := append([]string{"-all"}, files...)
-	easyjsonPath := this.easyjsonPath
-	if easyjsonPath == "" {
-		exePath := os.Args[0]
-		absPath, err := filepath.Abs(exePath)
-		if err != nil {
-			panic(err)
-		}
-		easyjsonPath = filepath.Join(filepath.Dir(absPath), "easyjson")
-		if err := misc.FindFile(easyjsonPath); err != nil {
-			easyjsonPath = "easyjson"
-		}
+	exePath := os.Args[0]
+	absPath, err := filepath.Abs(exePath)
+	if err != nil {
+		panic(err)
+	}
+	easyjsonPath := filepath.Join(filepath.Dir(absPath), "easyjson")
+	if err := misc.FindFile(easyjsonPath); err != nil {
+		easyjsonPath = "easyjson"
 	}
 	easyjson := exec.Command(easyjsonPath, args...)
 	easyjson.Stdout = os.Stdout
