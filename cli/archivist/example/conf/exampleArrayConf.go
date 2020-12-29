@@ -5,7 +5,7 @@ package conf
 import (
 	"time"
 
-	"github.com/kingsgroupos/archivist/runtime/go/archivist"
+	"github.com/kingsgroupos/archivist/lib/go/archivist"
 	"github.com/kingsgroupos/misc/wtime"
 	"github.com/pkg/errors"
 )

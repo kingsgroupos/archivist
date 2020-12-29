@@ -17,7 +17,7 @@ var (
 	_ easyjson.Marshaler
 )
 
-func easyjson5d27fa6dDecodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(in *jlexer.Lexer, out *EConf) {
+func easyjson5d27fa6dDecodeGithubComKingsgrouposArchivistLibGoOverwriteConf(in *jlexer.Lexer, out *EConf) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -130,7 +130,7 @@ func easyjson5d27fa6dDecodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(
 		in.Consumed()
 	}
 }
-func easyjson5d27fa6dEncodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(out *jwriter.Writer, in EConf) {
+func easyjson5d27fa6dEncodeGithubComKingsgrouposArchivistLibGoOverwriteConf(out *jwriter.Writer, in EConf) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -229,23 +229,23 @@ func easyjson5d27fa6dEncodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(
 // MarshalJSON supports json.Marshaler interface
 func (v EConf) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjson5d27fa6dEncodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(&w, v)
+	easyjson5d27fa6dEncodeGithubComKingsgrouposArchivistLibGoOverwriteConf(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v EConf) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson5d27fa6dEncodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(w, v)
+	easyjson5d27fa6dEncodeGithubComKingsgrouposArchivistLibGoOverwriteConf(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *EConf) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjson5d27fa6dDecodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(&r, v)
+	easyjson5d27fa6dDecodeGithubComKingsgrouposArchivistLibGoOverwriteConf(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *EConf) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson5d27fa6dDecodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(l, v)
+	easyjson5d27fa6dDecodeGithubComKingsgrouposArchivistLibGoOverwriteConf(l, v)
 }

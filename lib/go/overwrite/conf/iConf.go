@@ -5,7 +5,7 @@ package conf
 import (
 	"time"
 
-	"github.com/kingsgroupos/archivist/runtime/go/archivist"
+	"github.com/kingsgroupos/archivist/lib/go/archivist"
 	"github.com/kingsgroupos/misc/wtime"
 	"github.com/pkg/errors"
 )
@@ -18,13 +18,9 @@ var (
 )
 
 // easyjson:json
-type AConf struct {
-	A1 int64 `json:"A1" bson:"A1"`
-	A2 int64 `json:"A2" bson:"A2"`
-	A3 int64 `json:"A3" bson:"A3"`
-}
+type IConf map[string]map[string]int64
 
-func (this *AConf) bindRefs(c *Collection) error {
+func (this *IConf) bindRefs(c *Collection) error {
 	if this == nil {
 		return nil
 	}

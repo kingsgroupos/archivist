@@ -7,8 +7,8 @@ import (
 	"testing"
 
 	"github.com/edwingeng/slog"
-	"github.com/kingsgroupos/archivist/runtime/go/archivist"
-	"github.com/kingsgroupos/archivist/runtime/go/overwrite/conf"
+	"github.com/kingsgroupos/archivist/lib/go/archivist"
+	"github.com/kingsgroupos/archivist/lib/go/overwrite/conf"
 	"github.com/kingsgroupos/misc"
 )
 

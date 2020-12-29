@@ -17,7 +17,7 @@ var (
 	_ easyjson.Marshaler
 )
 
-func easyjson70a7cad3DecodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(in *jlexer.Lexer, out *CConf) {
+func easyjsonB418addaDecodeGithubComKingsgrouposArchivistLibGoOverwriteConf(in *jlexer.Lexer, out *BConf) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -36,12 +36,12 @@ func easyjson70a7cad3DecodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(
 			continue
 		}
 		switch key {
-		case "C1":
-			out.C1 = int64(in.Int64())
-		case "C2":
-			out.C2 = int64(in.Int64())
-		case "C3":
-			out.C3 = int64(in.Int64())
+		case "B1":
+			out.B1 = int64(in.Int64())
+		case "B2":
+			out.B2 = int64(in.Int64())
+		case "B3":
+			out.B3 = int64(in.Int64())
 		default:
 			in.SkipRecursive()
 		}
@@ -52,48 +52,48 @@ func easyjson70a7cad3DecodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(
 		in.Consumed()
 	}
 }
-func easyjson70a7cad3EncodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(out *jwriter.Writer, in CConf) {
+func easyjsonB418addaEncodeGithubComKingsgrouposArchivistLibGoOverwriteConf(out *jwriter.Writer, in BConf) {
 	out.RawByte('{')
 	first := true
 	_ = first
 	{
-		const prefix string = ",\"C1\":"
+		const prefix string = ",\"B1\":"
 		out.RawString(prefix[1:])
-		out.Int64(int64(in.C1))
+		out.Int64(int64(in.B1))
 	}
 	{
-		const prefix string = ",\"C2\":"
+		const prefix string = ",\"B2\":"
 		out.RawString(prefix)
-		out.Int64(int64(in.C2))
+		out.Int64(int64(in.B2))
 	}
 	{
-		const prefix string = ",\"C3\":"
+		const prefix string = ",\"B3\":"
 		out.RawString(prefix)
-		out.Int64(int64(in.C3))
+		out.Int64(int64(in.B3))
 	}
 	out.RawByte('}')
 }
 
 // MarshalJSON supports json.Marshaler interface
-func (v CConf) MarshalJSON() ([]byte, error) {
+func (v BConf) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjson70a7cad3EncodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(&w, v)
+	easyjsonB418addaEncodeGithubComKingsgrouposArchivistLibGoOverwriteConf(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
-func (v CConf) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson70a7cad3EncodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(w, v)
+func (v BConf) MarshalEasyJSON(w *jwriter.Writer) {
+	easyjsonB418addaEncodeGithubComKingsgrouposArchivistLibGoOverwriteConf(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
-func (v *CConf) UnmarshalJSON(data []byte) error {
+func (v *BConf) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjson70a7cad3DecodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(&r, v)
+	easyjsonB418addaDecodeGithubComKingsgrouposArchivistLibGoOverwriteConf(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
-func (v *CConf) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson70a7cad3DecodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(l, v)
+func (v *BConf) UnmarshalEasyJSON(l *jlexer.Lexer) {
+	easyjsonB418addaDecodeGithubComKingsgrouposArchivistLibGoOverwriteConf(l, v)
 }

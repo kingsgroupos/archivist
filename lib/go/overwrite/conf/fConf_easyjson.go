@@ -17,7 +17,7 @@ var (
 	_ easyjson.Marshaler
 )
 
-func easyjsonA775cfd6DecodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(in *jlexer.Lexer, out *FConf) {
+func easyjsonA775cfd6DecodeGithubComKingsgrouposArchivistLibGoOverwriteConf(in *jlexer.Lexer, out *FConf) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		if isTopLevel {
@@ -54,7 +54,7 @@ func easyjsonA775cfd6DecodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(
 		in.Consumed()
 	}
 }
-func easyjsonA775cfd6EncodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(out *jwriter.Writer, in FConf) {
+func easyjsonA775cfd6EncodeGithubComKingsgrouposArchivistLibGoOverwriteConf(out *jwriter.Writer, in FConf) {
 	out.RawByte('{')
 	first := true
 	_ = first
@@ -84,23 +84,23 @@ func easyjsonA775cfd6EncodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(
 // MarshalJSON supports json.Marshaler interface
 func (v FConf) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjsonA775cfd6EncodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(&w, v)
+	easyjsonA775cfd6EncodeGithubComKingsgrouposArchivistLibGoOverwriteConf(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
 func (v FConf) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjsonA775cfd6EncodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(w, v)
+	easyjsonA775cfd6EncodeGithubComKingsgrouposArchivistLibGoOverwriteConf(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
 func (v *FConf) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjsonA775cfd6DecodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(&r, v)
+	easyjsonA775cfd6DecodeGithubComKingsgrouposArchivistLibGoOverwriteConf(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
 func (v *FConf) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjsonA775cfd6DecodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(l, v)
+	easyjsonA775cfd6DecodeGithubComKingsgrouposArchivistLibGoOverwriteConf(l, v)
 }

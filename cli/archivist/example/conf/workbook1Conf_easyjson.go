@@ -4,7 +4,7 @@ package conf
 
 import (
 	json "encoding/json"
-	archivist "github.com/kingsgroupos/archivist/runtime/go/archivist"
+	archivist "github.com/kingsgroupos/archivist/lib/go/archivist"
 	wtime "github.com/kingsgroupos/misc/wtime"
 	easyjson "github.com/mailru/easyjson"
 	jlexer "github.com/mailru/easyjson/jlexer"

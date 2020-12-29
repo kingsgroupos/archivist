@@ -17,31 +17,38 @@ var (
 	_ easyjson.Marshaler
 )
 
-func easyjson809b5f19DecodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(in *jlexer.Lexer, out *IConf) {
+func easyjsonA1edf190DecodeGithubComKingsgrouposArchivistLibGoOverwriteConf(in *jlexer.Lexer, out *HConf) {
 	isTopLevel := in.IsStart()
 	if in.IsNull() {
 		in.Skip()
 	} else {
 		in.Delim('{')
-		*out = make(IConf)
+		*out = make(HConf)
 		for !in.IsDelim('}') {
 			key := string(in.String())
 			in.WantColon()
-			var v1 map[string]int64
+			var v1 []int64
 			if in.IsNull() {
 				in.Skip()
+				v1 = nil
 			} else {
-				in.Delim('{')
-				v1 = make(map[string]int64)
-				for !in.IsDelim('}') {
-					key := string(in.String())
-					in.WantColon()
+				in.Delim('[')
+				if v1 == nil {
+					if !in.IsDelim(']') {
+						v1 = make([]int64, 0, 8)
+					} else {
+						v1 = []int64{}
+					}
+				} else {
+					v1 = (v1)[:0]
+				}
+				for !in.IsDelim(']') {
 					var v2 int64
 					v2 = int64(in.Int64())
-					(v1)[key] = v2
+					v1 = append(v1, v2)
 					in.WantComma()
 				}
-				in.Delim('}')
+				in.Delim(']')
 			}
 			(*out)[key] = v1
 			in.WantComma()
@@ -52,7 +59,7 @@ func easyjson809b5f19DecodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(
 		in.Consumed()
 	}
 }
-func easyjson809b5f19EncodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(out *jwriter.Writer, in IConf) {
+func easyjsonA1edf190EncodeGithubComKingsgrouposArchivistLibGoOverwriteConf(out *jwriter.Writer, in HConf) {
 	if in == nil && (out.Flags&jwriter.NilMapAsEmpty) == 0 {
 		out.RawString(`null`)
 	} else {
@@ -66,22 +73,17 @@ func easyjson809b5f19EncodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(
 			}
 			out.String(string(v3Name))
 			out.RawByte(':')
-			if v3Value == nil && (out.Flags&jwriter.NilMapAsEmpty) == 0 {
-				out.RawString(`null`)
+			if v3Value == nil && (out.Flags&jwriter.NilSliceAsEmpty) == 0 {
+				out.RawString("null")
 			} else {
-				out.RawByte('{')
-				v4First := true
-				for v4Name, v4Value := range v3Value {
-					if v4First {
-						v4First = false
-					} else {
+				out.RawByte('[')
+				for v4, v5 := range v3Value {
+					if v4 > 0 {
 						out.RawByte(',')
 					}
-					out.String(string(v4Name))
-					out.RawByte(':')
-					out.Int64(int64(v4Value))
+					out.Int64(int64(v5))
 				}
-				out.RawByte('}')
+				out.RawByte(']')
 			}
 		}
 		out.RawByte('}')
@@ -89,25 +91,25 @@ func easyjson809b5f19EncodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(
 }
 
 // MarshalJSON supports json.Marshaler interface
-func (v IConf) MarshalJSON() ([]byte, error) {
+func (v HConf) MarshalJSON() ([]byte, error) {
 	w := jwriter.Writer{}
-	easyjson809b5f19EncodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(&w, v)
+	easyjsonA1edf190EncodeGithubComKingsgrouposArchivistLibGoOverwriteConf(&w, v)
 	return w.Buffer.BuildBytes(), w.Error
 }
 
 // MarshalEasyJSON supports easyjson.Marshaler interface
-func (v IConf) MarshalEasyJSON(w *jwriter.Writer) {
-	easyjson809b5f19EncodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(w, v)
+func (v HConf) MarshalEasyJSON(w *jwriter.Writer) {
+	easyjsonA1edf190EncodeGithubComKingsgrouposArchivistLibGoOverwriteConf(w, v)
 }
 
 // UnmarshalJSON supports json.Unmarshaler interface
-func (v *IConf) UnmarshalJSON(data []byte) error {
+func (v *HConf) UnmarshalJSON(data []byte) error {
 	r := jlexer.Lexer{Data: data}
-	easyjson809b5f19DecodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(&r, v)
+	easyjsonA1edf190DecodeGithubComKingsgrouposArchivistLibGoOverwriteConf(&r, v)
 	return r.Error()
 }
 
 // UnmarshalEasyJSON supports easyjson.Unmarshaler interface
-func (v *IConf) UnmarshalEasyJSON(l *jlexer.Lexer) {
-	easyjson809b5f19DecodeGithubComKingsgrouposArchivistRuntimeGoOverwriteConf(l, v)
+func (v *HConf) UnmarshalEasyJSON(l *jlexer.Lexer) {
+	easyjsonA1edf190DecodeGithubComKingsgrouposArchivistLibGoOverwriteConf(l, v)
 }
