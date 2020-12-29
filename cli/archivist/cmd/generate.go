@@ -467,14 +467,14 @@ func (this *generateCmdT) buildFuncMap(newTypes map[*guesser.Node]string, jsonFi
 	toPascal := func(name string) string {
 		s := variable.ToPascal(name)
 		if s == "" {
-			return fmt.Sprintf("<!!!%s!!!>", name)
+			panic(fmt.Errorf("cannot convert %q to a valid name", name))
 		}
 		return s
 	}
 	toCamel := func(name string) string {
 		s := variable.ToCamel(name)
 		if s == "" {
-			return fmt.Sprintf("<!!!%s!!!>", name)
+			panic(fmt.Errorf("cannot convert %q to a valid name", name))
 		}
 		return s
 	}
