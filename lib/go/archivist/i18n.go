@@ -39,7 +39,10 @@ var (
 type I18n string
 
 func (s I18n) I18n(lang string) string {
-	return ResolveI18n(lang, string(s))
+	if ResolveI18n != nil {
+		return ResolveI18n(lang, string(s))
+	}
+	panic("archivist.ResolveI18n is not set yet")
 }
 
 func (s I18n) Sprintf(lang string, a ...interface{}) (string, error) {
