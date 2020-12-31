@@ -789,13 +789,36 @@ type Node struct {
     Notes string
 }
 
+// structArgs is passed to struct.tpl when executing the code template.
+type structArgs struct {
+    Pkg   string
+    Nodes []*Node
+}
+
+// collectionArgs is passed to collection.tpl when executing the code template.
+type collectionArgs struct {
+    Pkg                 string
+    JSONFiles           []string
+    Structs             []string
+    RevRefGraph         map[string][]string
+    CollectionExtension bool
+}
+
+// collectionExtensionArgs is passed to collectionExtension.tpl when executing the code template.
+type collectionExtensionArgs struct {
+    Pkg string
+}
+
+// bsonTag returns whether to generate BSON tag for struct field
+func bsonTag() bool
+
 // deepToRef scans the specified node and all of its descendents, if the type of any node is
 // reference, it returns true. Otherwise, it returns false.
-func deepToRef(node *guesser.Node) bool
+func deepToRef(node *Node) bool
 
 // deepToStruct scans the specified node and all of its descendents, if the type of any node
 // is struct, it returns true. Otherwise, it returns false.
-func deepToStruct(node *guesser.Node) bool
+func deepToStruct(node *Node) bool
 
 // depth is an 'depth' manager.
 // If action is "+", it increases 'depth' by 1 and returns an empty string.
@@ -820,7 +843,7 @@ func jsonFile() string
 func lcfirst(s string) string
 
 // lookupStructName returns the struct name of the specified node if its type is struct.
-func lookupStructName(node *guesser.Node) string
+func lookupStructName(node *Node) string
 
 // shortenRefName shortens refName by removing its suffix.
 func shortenRefName(refName string) string
