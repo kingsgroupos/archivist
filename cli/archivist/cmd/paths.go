@@ -45,7 +45,7 @@ var pathsCmd pathsCmdT
 
 var pathsCmdCobra = &cobra.Command{
 	Use:   "paths <file>",
-	Short: "Show all node paths of a .json/.js file",
+	Short: "Show all the node paths and data types of a .json/.js file",
 	Run:   pathsCmd.execute,
 }
 

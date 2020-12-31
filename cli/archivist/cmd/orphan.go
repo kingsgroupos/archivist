@@ -50,7 +50,7 @@ var orphanCmd orphanCmdT
 
 var orphanCmdCobra = &cobra.Command{
 	Use:   "orphan <dataDir> <codeDir> <codeFileExt> [ignore1,ignore2,...]",
-	Short: "Find (and delete, optionally) orphan files in your code",
+	Short: "Find out (and delete, optionally) orphan files in your code",
 	Run:   orphanCmd.execute,
 }
 
