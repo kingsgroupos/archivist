@@ -1,4 +1,4 @@
-package tmp
+package overwrite
 
 import (
 	"os"

@@ -198,7 +198,7 @@ for {{if deepToRef .}}k{{else}}_{{end}}, v := range v {
 	if v != 0 {
 		r[k], ok = {{template "bindRefs" .Value.MapValue}}
 		if !ok {
-			return errors.Errorf("<{{jsonFile}}{{.Path}}> {{originalRefName .Value.MapValue.Value.Ref}}[%d] does NOT exist", v)
+			return errors.Errorf("<{{jsonFile}}{{.Path}}> {{shortenRefName .Value.MapValue.Value.Ref}}[%d] does NOT exist", v)
 		}
 	} else {
 		r[k] = nil
@@ -224,7 +224,7 @@ for {{if deepToRef .}}k{{else}}_{{end}}, v := range v {
 	if v != 0 {
 		r[k], ok = {{template "bindRefs" .Value.ArrayValue}}
 		if !ok {
-			return errors.Errorf("<{{jsonFile}}{{.Path}}> {{originalRefName .Value.ArrayValue.Value.Ref}}[%d] does NOT exist", v)
+			return errors.Errorf("<{{jsonFile}}{{.Path}}> {{shortenRefName .Value.ArrayValue.Value.Ref}}[%d] does NOT exist", v)
 		}
 	} else {
 		r[k] = nil
@@ -248,7 +248,7 @@ for {{if deepToRef .}}k{{else}}_{{end}}, v := range v {
 if this.{{toPascal .Name}} != 0 {
 	this.{{toPascal .Name}}Ref, ok = c.{{toPascal .Value.Ref}}[this.{{toPascal .Name}}]
 	if !ok {
-		return errors.Errorf("<{{jsonFile}}{{.Path}}> {{originalRefName .Value.Ref}}[%d] does NOT exist", this.{{toPascal .Name}})
+		return errors.Errorf("<{{jsonFile}}{{.Path}}> {{shortenRefName .Value.Ref}}[%d] does NOT exist", this.{{toPascal .Name}})
 	}
 } else {
 	this.{{toPascal .Name}}Ref = nil
