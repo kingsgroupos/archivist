@@ -482,7 +482,7 @@ func (this *generateCmdT) buildFuncMap(newTypes map[*guesser.Node]string, jsonFi
 	jsonFileFunc := func() string {
 		return jsonFile
 	}
-	originalRefName := func(s string) string {
+	shortenRefName := func(s string) string {
 		return strings.TrimSuffix(s, this.structNameSuffix)
 	}
 	graveAccent := func() string {
@@ -502,7 +502,7 @@ func (this *generateCmdT) buildFuncMap(newTypes map[*guesser.Node]string, jsonFi
 		"depth":            depth,
 		"trimPrefix":       strings.TrimPrefix,
 		"trimSuffix":       strings.TrimSuffix,
-		"originalRefName":  originalRefName,
+		"shortenRefName":   shortenRefName,
 		"hasPrefix":        strings.HasPrefix,
 		"hasSuffix":        strings.HasSuffix,
 		"jsonFile":         jsonFileFunc,
