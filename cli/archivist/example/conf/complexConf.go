@@ -22,19 +22,19 @@ type ComplexConf map[int64]*ComplexConfItem
 
 // ComplexConfItem represents /map[]
 type ComplexConfItem struct {
-	X3    [][]int64                           `json:"x3" bson:"x3"`
-	X5    []*ComplexConf_241695546            `json:"x5" bson:"x5"`
-	X6    []map[string][][]int64              `json:"x6" bson:"x6"` // a long note, long long ...
-	X6Ref []map[string][][]*Workbook2ConfItem `json:"-" bson:"-"`   // a long note, long long ...
-	X7    map[string]int64                    `json:"x7" bson:"x7"`
-	Xx    [][]int64                           `json:"xx" bson:"xx"`
-	XxRef [][]*Workbook2ConfItem              `json:"-" bson:"-"`
+	X3    [][]int64                           `json:"x3"`
+	X5    []*ComplexConf_241695546            `json:"x5"`
+	X6    []map[string][][]int64              `json:"x6"` // a long note, long long ...
+	X6Ref []map[string][][]*Workbook2ConfItem `json:"-"`  // a long note, long long ...
+	X7    map[string]int64                    `json:"x7"`
+	Xx    [][]int64                           `json:"xx"`
+	XxRef [][]*Workbook2ConfItem              `json:"-"`
 }
 
 // ComplexConf_241695546 represents /map[]/x5/[]
 type ComplexConf_241695546 struct {
-	X5A    [][]int64              `json:"x5a" bson:"x5a"`
-	X5ARef [][]*Workbook2ConfItem `json:"-" bson:"-"`
+	X5A    [][]int64              `json:"x5a"`
+	X5ARef [][]*Workbook2ConfItem `json:"-"`
 }
 
 func (this *ComplexConf) bindRefs(c *Collection) error {

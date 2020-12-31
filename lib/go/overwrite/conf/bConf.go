@@ -19,9 +19,9 @@ var (
 
 // easyjson:json
 type BConf struct {
-	B1 int64 `json:"B1" bson:"B1"`
-	B2 int64 `json:"B2" bson:"B2"`
-	B3 int64 `json:"B3" bson:"B3"`
+	B1 int64 `json:"B1"`
+	B2 int64 `json:"B2"`
+	B3 int64 `json:"B3"`
 }
 
 func (this *BConf) bindRefs(c *Collection) error {

@@ -19,9 +19,9 @@ var (
 
 // easyjson:json
 type VersionConf struct {
-	CompatibleVersions []string `json:"CompatibleVersions" bson:"CompatibleVersions"`
-	Formal             bool     `json:"Formal" bson:"Formal"`
-	Version            string   `json:"Version" bson:"Version"`
+	CompatibleVersions []string `json:"CompatibleVersions"`
+	Formal             bool     `json:"Formal"`
+	Version            string   `json:"Version"`
 }
 
 func (this *VersionConf) bindRefs(c *Collection) error {

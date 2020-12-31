@@ -19,10 +19,10 @@ var (
 
 // easyjson:json
 type FConf struct {
-	F1 int64 `json:"F1" bson:"F1"`
-	F2 int64 `json:"F2" bson:"F2"`
-	F3 int64 `json:"F3" bson:"F3"`
-	F5 int64 `json:"F5" bson:"F5"`
+	F1 int64 `json:"F1"`
+	F2 int64 `json:"F2"`
+	F3 int64 `json:"F3"`
+	F5 int64 `json:"F5"`
 }
 
 func (this *FConf) bindRefs(c *Collection) error {

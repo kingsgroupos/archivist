@@ -19,8 +19,8 @@ var (
 
 // easyjson:json
 type FloatsConf struct {
-	Count int64   `json:"count" bson:"count"`
-	Mean  float64 `json:"mean" bson:"mean"`
+	Count int64   `json:"count"`
+	Mean  float64 `json:"mean"`
 }
 
 func (this *FloatsConf) bindRefs(c *Collection) error {

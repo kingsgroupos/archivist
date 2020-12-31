@@ -22,25 +22,25 @@ type Workbook1Conf map[int64]*Workbook1ConfItem
 
 // Workbook1ConfItem represents /map[]
 type Workbook1ConfItem struct {
-	ID              int64                `json:"ID" bson:"_id"`
-	MyBool          bool                 `json:"MyBool" bson:"MyBool"`                   // 布尔值
-	MyBoolArray     []bool               `json:"MyBoolArray" bson:"MyBoolArray"`         // 布尔数组
-	MyDatetime      time.Time            `json:"MyDatetime" bson:"MyDatetime"`           // 时间
-	MyDatetimeArray []time.Time          `json:"MyDatetimeArray" bson:"MyDatetimeArray"` // 时间数组
-	MyDuration      wtime.Duration       `json:"MyDuration" bson:"MyDuration"`           // 时长
-	MyDurationArray []wtime.Duration     `json:"MyDurationArray" bson:"MyDurationArray"` // 时长数组
-	MyFloat         float64              `json:"MyFloat" bson:"MyFloat"`                 // 浮点数
-	MyFloatArray    []float64            `json:"MyFloatArray" bson:"MyFloatArray"`       // 浮点数数组
-	MyI18N          archivist.I18n       `json:"MyI18N" bson:"MyI18N"`                   // i18n字符串
-	MyI18NArray     []archivist.I18n     `json:"MyI18NArray" bson:"MyI18NArray"`         // i18n字符串数组
-	MyInt           int64                `json:"MyInt" bson:"MyInt"`                     // 整数
-	MyIntArray      []int64              `json:"MyIntArray" bson:"MyIntArray"`           // 整数数组
-	MyRef           int64                `json:"MyRef" bson:"MyRef"`                     // 外部引用
-	MyRefRef        *Workbook2ConfItem   `json:"-" bson:"-"`                             // 外部引用
-	MyRefArray      []int64              `json:"MyRefArray" bson:"MyRefArray"`           // 外部引用数组
-	MyRefArrayRef   []*Workbook2ConfItem `json:"-" bson:"-"`                             // 外部引用数组
-	MyString        string               `json:"MyString" bson:"MyString"`               // 字符串
-	MyStringArray   []string             `json:"MyStringArray" bson:"MyStringArray"`     // 字符串数组
+	ID              int64                `json:"ID"`
+	MyBool          bool                 `json:"MyBool"`          // 布尔值
+	MyBoolArray     []bool               `json:"MyBoolArray"`     // 布尔数组
+	MyDatetime      time.Time            `json:"MyDatetime"`      // 时间
+	MyDatetimeArray []time.Time          `json:"MyDatetimeArray"` // 时间数组
+	MyDuration      wtime.Duration       `json:"MyDuration"`      // 时长
+	MyDurationArray []wtime.Duration     `json:"MyDurationArray"` // 时长数组
+	MyFloat         float64              `json:"MyFloat"`         // 浮点数
+	MyFloatArray    []float64            `json:"MyFloatArray"`    // 浮点数数组
+	MyI18N          archivist.I18n       `json:"MyI18N"`          // i18n字符串
+	MyI18NArray     []archivist.I18n     `json:"MyI18NArray"`     // i18n字符串数组
+	MyInt           int64                `json:"MyInt"`           // 整数
+	MyIntArray      []int64              `json:"MyIntArray"`      // 整数数组
+	MyRef           int64                `json:"MyRef"`           // 外部引用
+	MyRefRef        *Workbook2ConfItem   `json:"-"`               // 外部引用
+	MyRefArray      []int64              `json:"MyRefArray"`      // 外部引用数组
+	MyRefArrayRef   []*Workbook2ConfItem `json:"-"`               // 外部引用数组
+	MyString        string               `json:"MyString"`        // 字符串
+	MyStringArray   []string             `json:"MyStringArray"`   // 字符串数组
 }
 
 func (this *Workbook1Conf) bindRefs(c *Collection) error {

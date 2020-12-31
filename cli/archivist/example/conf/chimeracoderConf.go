@@ -19,109 +19,109 @@ var (
 
 // easyjson:json
 type ChimeracoderConf struct {
-	ArchiveUrl       string                      `json:"archive_url" bson:"archive_url"`
-	Archived         bool                        `json:"archived" bson:"archived"`
-	AssigneesUrl     string                      `json:"assignees_url" bson:"assignees_url"`
-	BlobsUrl         string                      `json:"blobs_url" bson:"blobs_url"`
-	BranchesUrl      string                      `json:"branches_url" bson:"branches_url"`
-	CloneUrl         string                      `json:"clone_url" bson:"clone_url"`
-	CollaboratorsUrl string                      `json:"collaborators_url" bson:"collaborators_url"`
-	CommentsUrl      string                      `json:"comments_url" bson:"comments_url"`
-	CommitsUrl       string                      `json:"commits_url" bson:"commits_url"`
-	CompareUrl       string                      `json:"compare_url" bson:"compare_url"`
-	ContentsUrl      string                      `json:"contents_url" bson:"contents_url"`
-	ContributorsUrl  string                      `json:"contributors_url" bson:"contributors_url"`
-	CreatedAt        string                      `json:"created_at" bson:"created_at"`
-	DefaultBranch    string                      `json:"default_branch" bson:"default_branch"`
-	DeploymentsUrl   string                      `json:"deployments_url" bson:"deployments_url"`
-	Description      string                      `json:"description" bson:"description"`
-	DownloadsUrl     string                      `json:"downloads_url" bson:"downloads_url"`
-	EventsUrl        string                      `json:"events_url" bson:"events_url"`
-	Fork             bool                        `json:"fork" bson:"fork"`
-	Forks            int64                       `json:"forks" bson:"forks"`
-	ForksCount       int64                       `json:"forks_count" bson:"forks_count"`
-	ForksUrl         string                      `json:"forks_url" bson:"forks_url"`
-	FullName         string                      `json:"full_name" bson:"full_name"`
-	GitCommitsUrl    string                      `json:"git_commits_url" bson:"git_commits_url"`
-	GitRefsUrl       string                      `json:"git_refs_url" bson:"git_refs_url"`
-	GitTagsUrl       string                      `json:"git_tags_url" bson:"git_tags_url"`
-	GitUrl           string                      `json:"git_url" bson:"git_url"`
-	HasDownloads     bool                        `json:"has_downloads" bson:"has_downloads"`
-	HasIssues        bool                        `json:"has_issues" bson:"has_issues"`
-	HasPages         bool                        `json:"has_pages" bson:"has_pages"`
-	HasProjects      bool                        `json:"has_projects" bson:"has_projects"`
-	HasWiki          bool                        `json:"has_wiki" bson:"has_wiki"`
-	Homepage         string                      `json:"homepage" bson:"homepage"`
-	HooksUrl         string                      `json:"hooks_url" bson:"hooks_url"`
-	HtmlUrl          string                      `json:"html_url" bson:"html_url"`
-	Id               int64                       `json:"id" bson:"_id"`
-	IssueCommentUrl  string                      `json:"issue_comment_url" bson:"issue_comment_url"`
-	IssueEventsUrl   string                      `json:"issue_events_url" bson:"issue_events_url"`
-	IssuesUrl        string                      `json:"issues_url" bson:"issues_url"`
-	KeysUrl          string                      `json:"keys_url" bson:"keys_url"`
-	LabelsUrl        string                      `json:"labels_url" bson:"labels_url"`
-	Language         string                      `json:"language" bson:"language"`
-	LanguagesUrl     string                      `json:"languages_url" bson:"languages_url"`
-	License          *ChimeracoderConf_435991868 `json:"license" bson:"license"`
-	MergesUrl        string                      `json:"merges_url" bson:"merges_url"`
-	MilestonesUrl    string                      `json:"milestones_url" bson:"milestones_url"`
-	Name             string                      `json:"name" bson:"name"`
-	NetworkCount     int64                       `json:"network_count" bson:"network_count"`
-	NodeId           string                      `json:"node_id" bson:"node_id"`
-	NotificationsUrl string                      `json:"notifications_url" bson:"notifications_url"`
-	OpenIssues       int64                       `json:"open_issues" bson:"open_issues"`
-	OpenIssuesCount  int64                       `json:"open_issues_count" bson:"open_issues_count"`
-	Owner            *ChimeracoderConf_240645118 `json:"owner" bson:"owner"`
-	Private          bool                        `json:"private" bson:"private"`
-	PullsUrl         string                      `json:"pulls_url" bson:"pulls_url"`
-	PushedAt         string                      `json:"pushed_at" bson:"pushed_at"`
-	ReleasesUrl      string                      `json:"releases_url" bson:"releases_url"`
-	Size             int64                       `json:"size" bson:"size"`
-	SshUrl           string                      `json:"ssh_url" bson:"ssh_url"`
-	StargazersCount  int64                       `json:"stargazers_count" bson:"stargazers_count"`
-	StargazersUrl    string                      `json:"stargazers_url" bson:"stargazers_url"`
-	StatusesUrl      string                      `json:"statuses_url" bson:"statuses_url"`
-	SubscribersCount int64                       `json:"subscribers_count" bson:"subscribers_count"`
-	SubscribersUrl   string                      `json:"subscribers_url" bson:"subscribers_url"`
-	SubscriptionUrl  string                      `json:"subscription_url" bson:"subscription_url"`
-	SvnUrl           string                      `json:"svn_url" bson:"svn_url"`
-	TagsUrl          string                      `json:"tags_url" bson:"tags_url"`
-	TeamsUrl         string                      `json:"teams_url" bson:"teams_url"`
-	TreesUrl         string                      `json:"trees_url" bson:"trees_url"`
-	UpdatedAt        string                      `json:"updated_at" bson:"updated_at"`
-	Url              string                      `json:"url" bson:"url"`
-	Watchers         int64                       `json:"watchers" bson:"watchers"`
-	WatchersCount    int64                       `json:"watchers_count" bson:"watchers_count"`
+	ArchiveUrl       string                      `json:"archive_url"`
+	Archived         bool                        `json:"archived"`
+	AssigneesUrl     string                      `json:"assignees_url"`
+	BlobsUrl         string                      `json:"blobs_url"`
+	BranchesUrl      string                      `json:"branches_url"`
+	CloneUrl         string                      `json:"clone_url"`
+	CollaboratorsUrl string                      `json:"collaborators_url"`
+	CommentsUrl      string                      `json:"comments_url"`
+	CommitsUrl       string                      `json:"commits_url"`
+	CompareUrl       string                      `json:"compare_url"`
+	ContentsUrl      string                      `json:"contents_url"`
+	ContributorsUrl  string                      `json:"contributors_url"`
+	CreatedAt        string                      `json:"created_at"`
+	DefaultBranch    string                      `json:"default_branch"`
+	DeploymentsUrl   string                      `json:"deployments_url"`
+	Description      string                      `json:"description"`
+	DownloadsUrl     string                      `json:"downloads_url"`
+	EventsUrl        string                      `json:"events_url"`
+	Fork             bool                        `json:"fork"`
+	Forks            int64                       `json:"forks"`
+	ForksCount       int64                       `json:"forks_count"`
+	ForksUrl         string                      `json:"forks_url"`
+	FullName         string                      `json:"full_name"`
+	GitCommitsUrl    string                      `json:"git_commits_url"`
+	GitRefsUrl       string                      `json:"git_refs_url"`
+	GitTagsUrl       string                      `json:"git_tags_url"`
+	GitUrl           string                      `json:"git_url"`
+	HasDownloads     bool                        `json:"has_downloads"`
+	HasIssues        bool                        `json:"has_issues"`
+	HasPages         bool                        `json:"has_pages"`
+	HasProjects      bool                        `json:"has_projects"`
+	HasWiki          bool                        `json:"has_wiki"`
+	Homepage         string                      `json:"homepage"`
+	HooksUrl         string                      `json:"hooks_url"`
+	HtmlUrl          string                      `json:"html_url"`
+	Id               int64                       `json:"id"`
+	IssueCommentUrl  string                      `json:"issue_comment_url"`
+	IssueEventsUrl   string                      `json:"issue_events_url"`
+	IssuesUrl        string                      `json:"issues_url"`
+	KeysUrl          string                      `json:"keys_url"`
+	LabelsUrl        string                      `json:"labels_url"`
+	Language         string                      `json:"language"`
+	LanguagesUrl     string                      `json:"languages_url"`
+	License          *ChimeracoderConf_435991868 `json:"license"`
+	MergesUrl        string                      `json:"merges_url"`
+	MilestonesUrl    string                      `json:"milestones_url"`
+	Name             string                      `json:"name"`
+	NetworkCount     int64                       `json:"network_count"`
+	NodeId           string                      `json:"node_id"`
+	NotificationsUrl string                      `json:"notifications_url"`
+	OpenIssues       int64                       `json:"open_issues"`
+	OpenIssuesCount  int64                       `json:"open_issues_count"`
+	Owner            *ChimeracoderConf_240645118 `json:"owner"`
+	Private          bool                        `json:"private"`
+	PullsUrl         string                      `json:"pulls_url"`
+	PushedAt         string                      `json:"pushed_at"`
+	ReleasesUrl      string                      `json:"releases_url"`
+	Size             int64                       `json:"size"`
+	SshUrl           string                      `json:"ssh_url"`
+	StargazersCount  int64                       `json:"stargazers_count"`
+	StargazersUrl    string                      `json:"stargazers_url"`
+	StatusesUrl      string                      `json:"statuses_url"`
+	SubscribersCount int64                       `json:"subscribers_count"`
+	SubscribersUrl   string                      `json:"subscribers_url"`
+	SubscriptionUrl  string                      `json:"subscription_url"`
+	SvnUrl           string                      `json:"svn_url"`
+	TagsUrl          string                      `json:"tags_url"`
+	TeamsUrl         string                      `json:"teams_url"`
+	TreesUrl         string                      `json:"trees_url"`
+	UpdatedAt        string                      `json:"updated_at"`
+	Url              string                      `json:"url"`
+	Watchers         int64                       `json:"watchers"`
+	WatchersCount    int64                       `json:"watchers_count"`
 }
 
 // ChimeracoderConf_435991868 represents /license
 type ChimeracoderConf_435991868 struct {
-	Key    string `json:"key" bson:"key"`
-	Name   string `json:"name" bson:"name"`
-	NodeId string `json:"node_id" bson:"node_id"`
-	SpdxId string `json:"spdx_id" bson:"spdx_id"`
+	Key    string `json:"key"`
+	Name   string `json:"name"`
+	NodeId string `json:"node_id"`
+	SpdxId string `json:"spdx_id"`
 }
 
 // ChimeracoderConf_240645118 represents /owner
 type ChimeracoderConf_240645118 struct {
-	AvatarUrl         string `json:"avatar_url" bson:"avatar_url"`
-	EventsUrl         string `json:"events_url" bson:"events_url"`
-	FollowersUrl      string `json:"followers_url" bson:"followers_url"`
-	FollowingUrl      string `json:"following_url" bson:"following_url"`
-	GistsUrl          string `json:"gists_url" bson:"gists_url"`
-	GravatarId        string `json:"gravatar_id" bson:"gravatar_id"`
-	HtmlUrl           string `json:"html_url" bson:"html_url"`
-	Id                int64  `json:"id" bson:"_id"`
-	Login             string `json:"login" bson:"login"`
-	NodeId            string `json:"node_id" bson:"node_id"`
-	OrganizationsUrl  string `json:"organizations_url" bson:"organizations_url"`
-	ReceivedEventsUrl string `json:"received_events_url" bson:"received_events_url"`
-	ReposUrl          string `json:"repos_url" bson:"repos_url"`
-	SiteAdmin         bool   `json:"site_admin" bson:"site_admin"`
-	StarredUrl        string `json:"starred_url" bson:"starred_url"`
-	SubscriptionsUrl  string `json:"subscriptions_url" bson:"subscriptions_url"`
-	Type              string `json:"type" bson:"type"`
-	Url               string `json:"url" bson:"url"`
+	AvatarUrl         string `json:"avatar_url"`
+	EventsUrl         string `json:"events_url"`
+	FollowersUrl      string `json:"followers_url"`
+	FollowingUrl      string `json:"following_url"`
+	GistsUrl          string `json:"gists_url"`
+	GravatarId        string `json:"gravatar_id"`
+	HtmlUrl           string `json:"html_url"`
+	Id                int64  `json:"id"`
+	Login             string `json:"login"`
+	NodeId            string `json:"node_id"`
+	OrganizationsUrl  string `json:"organizations_url"`
+	ReceivedEventsUrl string `json:"received_events_url"`
+	ReposUrl          string `json:"repos_url"`
+	SiteAdmin         bool   `json:"site_admin"`
+	StarredUrl        string `json:"starred_url"`
+	SubscriptionsUrl  string `json:"subscriptions_url"`
+	Type              string `json:"type"`
+	Url               string `json:"url"`
 }
 
 func (this *ChimeracoderConf) bindRefs(c *Collection) error {

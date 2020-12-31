@@ -22,11 +22,11 @@ type Workbook2Conf map[int64]*Workbook2ConfItem
 
 // Workbook2ConfItem represents /map[]
 type Workbook2ConfItem struct {
-	ID          int64   `json:"ID" bson:"_id"`
-	MyBool      bool    `json:"MyBool" bson:"MyBool"`           // 布尔值
-	MyFloatVar  float64 `json:"MyFloatVar" bson:"MyFloatVar"`   // 浮点数
-	MyIntVar    int64   `json:"MyIntVar" bson:"MyIntVar"`       // 整数
-	MyStringVar string  `json:"MyStringVar" bson:"MyStringVar"` // 字符串
+	ID          int64   `json:"ID"`
+	MyBool      bool    `json:"MyBool"`      // 布尔值
+	MyFloatVar  float64 `json:"MyFloatVar"`  // 浮点数
+	MyIntVar    int64   `json:"MyIntVar"`    // 整数
+	MyStringVar string  `json:"MyStringVar"` // 字符串
 }
 
 func (this *Workbook2Conf) bindRefs(c *Collection) error {

@@ -19,13 +19,13 @@ var (
 
 // easyjson:json
 type EConf struct {
-	E1 int64            `json:"E1" bson:"E1"`
-	E2 int64            `json:"E2" bson:"E2"`
-	E3 int64            `json:"E3" bson:"E3"`
-	E5 []int64          `json:"E5" bson:"E5"`
-	E6 []int64          `json:"E6" bson:"E6"`
-	E7 map[string]int64 `json:"E7" bson:"E7"`
-	E8 map[string]int64 `json:"E8" bson:"E8"`
+	E1 int64            `json:"E1"`
+	E2 int64            `json:"E2"`
+	E3 int64            `json:"E3"`
+	E5 []int64          `json:"E5"`
+	E6 []int64          `json:"E6"`
+	E7 map[string]int64 `json:"E7"`
+	E8 map[string]int64 `json:"E8"`
 }
 
 func (this *EConf) bindRefs(c *Collection) error {

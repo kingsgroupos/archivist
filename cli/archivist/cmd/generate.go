@@ -80,6 +80,8 @@ func init() {
 		"x-collectionExtension", true, "generate collection extension related code")
 	cmd.Flags().BoolVar(&generateCmd.easyjson,
 		"x-easyjson", false, "generate easyjson related code")
+	cmd.Flags().BoolVar(&generateCmd.bsonTag,
+		"x-bsonTag", false, "generate BSON tag for struct field")
 	cmd.Flags().StringVar(&generateCmd.structNameSuffix,
 		"structNameSuffix", "Conf", "name suffix of struct")
 
@@ -96,6 +98,7 @@ type generateCmdT struct {
 	structCollection    bool
 	collectionExtension bool
 	easyjson            bool
+	bsonTag             bool
 	structNameSuffix    string
 
 	sharedFlags
@@ -488,6 +491,9 @@ func (this *generateCmdT) buildFuncMap(newTypes map[*guesser.Node]string, jsonFi
 	graveAccent := func() string {
 		return "`"
 	}
+	bsonTag := func() bool {
+		return this.bsonTag
+	}
 
 	return map[string]interface{}{
 		"ucfirst":          misc.UCFirst,
@@ -509,6 +515,7 @@ func (this *generateCmdT) buildFuncMap(newTypes map[*guesser.Node]string, jsonFi
 		"graveAccent":      graveAccent,
 		"toUpper":          strings.ToUpper,
 		"toLower":          strings.ToLower,
+		"bsonTag":          bsonTag,
 	}
 }
 

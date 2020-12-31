@@ -12,12 +12,12 @@
 
 {{- define "fieldTag"}}
 {{- graveAccent -}}
-json:"{{.Name}}" bson:"{{if eq (toUpper .Name) "ID"}}_id{{else}}{{.Name}}{{end}}"
+json:"{{.Name}}"{{if bsonTag}} bson:"{{if eq (toUpper .Name) "ID"}}_id{{else}}{{.Name}}{{end}}"{{end}}
 {{- graveAccent -}}
 {{- end}}
 
 {{- define "fieldTagZero"}}
-{{- graveAccent}}json:"-" bson:"-"{{graveAccent}}
+{{- graveAccent}}json:"-"{{if bsonTag}} bson:"-"{{end}}{{graveAccent}}
 {{- end}}
 
 {{- define "primitive"}}

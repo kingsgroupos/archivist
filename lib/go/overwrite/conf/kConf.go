@@ -22,8 +22,8 @@ type KConf map[string]*KConfItem
 
 // KConfItem represents /map[]
 type KConfItem struct {
-	Kxa int64 `json:"Kxa" bson:"Kxa"`
-	Kxb int64 `json:"Kxb" bson:"Kxb"`
+	Kxa int64 `json:"Kxa"`
+	Kxb int64 `json:"Kxb"`
 }
 
 func (this *KConf) bindRefs(c *Collection) error {

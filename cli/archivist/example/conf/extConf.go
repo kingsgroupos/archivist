@@ -19,8 +19,8 @@ var (
 
 // easyjson:json
 type ExtConf struct {
-	D wtime.Duration `json:"D" bson:"D"`
-	T time.Time      `json:"T" bson:"T"`
+	D wtime.Duration `json:"D"`
+	T time.Time      `json:"T"`
 }
 
 func (this *ExtConf) bindRefs(c *Collection) error {
