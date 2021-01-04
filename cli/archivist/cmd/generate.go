@@ -175,7 +175,6 @@ func (this *generateCmdT) execute(cmd *cobra.Command, args []string) {
 
 	if this.codeFileExt == ".go" {
 		this.whichCmd("gofmt")
-		this.whichCmd("easyjson")
 	}
 
 	p2 := filepath.Join(this.outputDir, TplCollectionExtension+this.codeFileExt)
