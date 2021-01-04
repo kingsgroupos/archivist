@@ -32,6 +32,11 @@ function printUsage() {
     $colorful && tput setaf 7
 }
 
+if ! [[ `which easyjson` ]]; then
+    go get -u github.com/edwingeng/easyjson-alt/easyjson
+    [[ $? -ne 0 ]] && exit 1
+fi
+
 WATCHER_CONF_GROUP=develop WATCHER_CONF_SUBGROUP=dolores ../../../cli/script/js2json.sh "`pwd`/json"
 echo
 

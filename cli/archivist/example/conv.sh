@@ -35,4 +35,17 @@ function printUsage() {
 go run ../archivist.go orphan json conf go
 [[ $? -ne 0 ]] && exit 1
 
-go run ../archivist.go generate --outputDir=conf --pkg=conf --x-easyjson "$@" json/*.json json/*.js
+if ! [[ `which easyjson` ]]; then
+    go get -u github.com/edwingeng/easyjson-alt/easyjson
+    [[ $? -ne 0 ]] && exit 1
+fi
+
+if [[ `which node` ]]; then
+    go run ../archivist.go generate --outputDir=conf --pkg=conf --x-easyjson "$@" 'json/*.json' 'json/*.js'
+    [[ $? -ne 0 ]] && exit 1
+else
+    go run ../archivist.go generate --outputDir=conf --pkg=conf --x-easyjson "$@" 'json/*.json'
+    [[ $? -ne 0 ]] && exit 1
+fi
+
+:
