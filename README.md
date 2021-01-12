@@ -1,6 +1,6 @@
 ## Overview
 
-Archivist generates data structure definitions from JSON files for any kind of programming language. Besides that, it also provides a library for golang to cut the job of managing runtime configs down to several lines of code.
+Archivist generates data structure definitions from JSON files for any kind of programming language. It also provides a library for golang to reduce the job of managing runtime configs down to just several lines of code.
 
 ## Contents
 
@@ -21,7 +21,7 @@ Archivist generates data structure definitions from JSON files for any kind of p
 - [Subcommand: paths](#paths)
 - [Subcommand: orphan](#orphan)
 - [Subcommand: tpls](#tpls)
-- [Generate Data Structure Definitions for Another Programming Language](#code-templates)
+- [Generating Data Structure Definitions for Another Programming Language](#code-templates)
 - [FAQ](#faq)
 
 <a name="features"></a>
@@ -32,10 +32,10 @@ Archivist generates data structure definitions from JSON files for any kind of p
 * Guess out the most suitable data type for arbitrary JSON field
 * Customize data type via [.meta](#.meta) file. E.g. replace struct with map[string]...
 * Support extended data types via [.meta](#.meta) file, including [reference](#reference), [datetime](#datetime), [duration](#duration) and [i18n](#i18n)
-* Process [.js](#.js) file in addition to .json file, which is much friendly to edit for human-kind
+* Process [.js](#.js) file in addition to .json file, which is much friendly to edit manually
 * Show all node paths and data types with the '[paths](#paths)' subcommand
 * Detect and drop orphan generated files with the '[orphan](#orphan)' subcommand
-* Customize [code templates](#code-templates), by which any kind of programming language can benefit from the tool
+* Customize [code templates](#code-templates), by which any programming language can benefit from
 
 #### Library
 
@@ -57,7 +57,7 @@ Note: To use [.js](#.js) as config file, you must have <a href="https://nodejs.o
 
 #### Install from Binary Release
 
-Download a binary release suitable for your system, unzip it, and then update your PATH environment variable in order that archivist can run from anywhere.
+Download a binary release suitable for your system, unzip it, and then update your PATH environment variable so that archivist can run from anywhere.
 
 #### Install from Source
 
@@ -280,7 +280,7 @@ map[1:hello 2:world]
 <a name=".meta"></a>
 ## Meta File
 
-In most cases, archivist automatically determines the data type of each JSON field. But sometimes, the data type of guess is not desired, or you prefer to use an [extended data type](#extended), you may give a .meta file to customize that.
+In most cases, archivist automatically determines the data type of each JSON field. But sometimes, if the data type of guess were not desired, or you prefer to use an [extended data type](#extended), you may give a .meta file to customize that.
 
 Suppose you have a file `abc.json`, and you want to change the data type of a JSON field. Just create a file `abc.meta` under the same directory where `abc.json` lies in. Archivist will parse it along with `abc.json` and apply the instructions in it.
 
@@ -290,7 +290,7 @@ Suppose you have a file `abc.json`, and you want to change the data type of a JS
 path type comment
 ```
 
-- **path**: path of the field from root. It is not easy to spell out the path of a field, therefore archivist provides a subcommand, [paths](#paths), to make it easy, with which all you need to do is copy/paste.
+- **path**: path of the field from root. It is not easy to spell out the path of a field, therefore archivist provides a subcommand, [paths](#paths), to simplify it, with which all you need to do is copy & paste.
 - **type**: data type. Here is the legal types:
 ```
 int, int8, int16, int32, int64, uint, uint8, uint16, uint32
@@ -384,7 +384,7 @@ type DConfItem struct {
 }
 ```
 
-The referenced config file must satisfy the following criterion: its corresponding type must be map, the key type must be int64
+The referenced config file must meet the following criterion: its corresponding type must be map, the key type must be int64
 and the value type must be struct.
 
 <a name="datetime"></a>
@@ -520,7 +520,7 @@ Number: 12,345.60
 <a name="conf-group"></a>
 ## Config Group and Subgroup
 
-Different operating environments may need more or less different configs. The config files under the root directory are base configs. Config group and subgroup are designed to overwrite base configs at file-level and content-level. By convention, each subfolder under the root directory is a config group and each subfolder under a config group directory is a config subgroup. In the following example, _local_, _develop_ and _release_ are config groups, _subgroup1_ and _subgroup2_ are config subgroups.
+Different operating environments may need different configs more or less. The config files under the root directory are base configs. Config group and subgroup are designed to overwrite base configs at file-level and content-level. By convention, each subfolder under the root directory is a config group and each subfolder under a config group directory is a config subgroup. In the following example, _local_, _develop_ and _release_ are config groups, _subgroup1_ and _subgroup2_ are config subgroups.
 
 ```
 bar
@@ -601,7 +601,7 @@ For more information, please refer to [Hot Patching](#patch).
 <a name="easyjson"></a>
 ## Fast Loading
 
-<a href="https://github.com/edwingeng/easyjson-alt" target="_blank">easyjson</a> can dramatically increase the speed of config loading. Turn on `--x-easyjson` to earn the benefit.
+<a href="https://github.com/edwingeng/easyjson-alt" target="_blank">easyjson</a> can dramatically increase the speed of config loading. Turn on `--x-easyjson` to enable the benefit.
 
 ```
 archivist generate --outputDir=foo/conf --pkg=conf --x-easyjson 'foo/json/*.json'
@@ -654,9 +654,9 @@ ar.SetCurrentCollection(newColl)
 
 Sometimes, raw configs does not fit your needs well. You have to write some code to organize raw configs and store the result for later use. Config extension is designed for that.
 
-Perhaps you have found that archivist generated a new file named `collectionExtension.go` and added an `Extention` field for the `Collection` struct. After the first code generation, archivist will never touch `collectionExtension.go` again, so you can udpate the file freely without worrying about losing your code.
+Perhaps you have found that archivist generated a new file named `collectionExtension.go` and added an `Extension` field for the `Collection` struct. After the first code generation, archivist will never touch `collectionExtension.go` again, so you can update the file freely without worrying about losing your code.
 
-In short, you can organize raw configs with the reload callback, which is invoked each time after `LoadCollection` succeeds, and store the result into the `Extention` struct.
+In short, you can organize raw configs with the reload callback, which is invoked each time after `LoadCollection` succeeds, and store the result into the `Extension` struct.
 
 <a name="compatibility"></a>
 ## Backward Compatibility Check
@@ -744,7 +744,7 @@ archivist generate --outputDir=foo/conf --pkg=conf --tplDir=code/template/direct
 ```
 
 <a name="code-templates"></a>
-## Generate Data Structure Definitions for Another Programming Language
+## Generating Data Structure Definitions for Another Programming Language
 
 1. Save the built-in code templates to files with the [tpls](#tpls) subcommand.
 2. Modify code templates according to your needs. Syntax reference: <a href="https://godoc.org/text/template" target="_blank">https://godoc.org/text/template</a>.
@@ -883,15 +883,15 @@ func ucfirst(s string) string
 
 - **Why JSON? Why not YAML, TOML, XML, CSV, ...?**
 
-JSON is simple yet good enough. It is widely supported by all kinds of programming languages. It supports hierarchical data structure. It provides no choice between field and property when you add a piece of data into a struct. JSON files are not hard to compare and merge.
+JSON is simple yet good enough. It is widely supported by all kinds of programming languages. It supports hierarchical data structure. It provides no choice between field and property when you add a piece of data into a struct. JSON files are easy to compare and merge.
 
-JSON is not perfect. It has too many double quotation marks. It does not support comment. The last item in a {}/[] must have no trailing comma. That is why archivist also supports Javascript as an auxiliary format. The data definition syntax of Javascript is very close to JSON.
+JSON is not perfect. It has too many double quotation marks. It does not support comments. The last item in a {}/[] must have no trailing comma. That is why archivist also supports Javascript as an auxiliary format. The data definition syntax of Javascript is very close to JSON.
 
 I'd like to support more file formats, but I have no time to do that. Contribution is welcome :)
 
 - **The code templates are too sophisticated. How can I get started?**
 
-The built-in code templates for golang are fully functional yet sophisticated. You can build your own templates in a much simpler way if you do not need so many features. We have other code templates written for `C#`, `Lua` and `EmmyLua`, but they are tightly coupled with our products and are not proper to open source.
+The built-in code templates for golang are fully functional. You can build your own templates in a much simpler way if you do not need so many features. We have other code templates written for `C#`, `Lua` and `EmmyLua`, but they are tightly coupled with our products and are not proper for opening source.
 
 Here is a hello-world-like code template of `struct.tpl`:
 
