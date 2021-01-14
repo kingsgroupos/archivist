@@ -249,6 +249,7 @@ if err != nil {
 // Set the current config collection
 ar.SetCurrentCollection(c1)
 
+// Modify Collection.CompatibleVersions() to let it return nil
 // ...
 
 // Get the current config collection
@@ -264,9 +265,6 @@ c3 := c2.(*conf.Collection)
 fmt.Println(c3.AConf.A1.AStruct.AInt)
 fmt.Println(c3.AConf.A1.AStruct.AMap)
 fmt.Println(c3.BConf[0])
-
-// At last, modify Collection.CompatibleVersions() to let it return nil
-// ...
 ```
 
 Output:
@@ -789,13 +787,13 @@ type Node struct {
     Notes string
 }
 
-// structArgs is passed to struct.tpl when executing the code template.
+// structArgs is the object passed to struct.tpl when executing the code template.
 type structArgs struct {
     Pkg   string
     Nodes []*Node
 }
 
-// collectionArgs is passed to collection.tpl when executing the code template.
+// collectionArgs is the object passed to collection.tpl when executing the code template.
 type collectionArgs struct {
     Pkg                 string
     JSONFiles           []string
@@ -804,7 +802,7 @@ type collectionArgs struct {
     CollectionExtension bool
 }
 
-// collectionExtensionArgs is passed to collectionExtension.tpl when executing the code template.
+// collectionExtensionArgs is the object passed to collectionExtension.tpl when executing the code template.
 type collectionExtensionArgs struct {
     Pkg string
 }
@@ -812,11 +810,11 @@ type collectionExtensionArgs struct {
 // bsonTag returns whether to generate BSON tag for struct field
 func bsonTag() bool
 
-// deepToRef scans the specified node and all of its descendents, if the type of any node is
+// deepToRef scans the specified node and all of its descendents, if the ValueKind of any node is
 // reference, it returns true. Otherwise, it returns false.
 func deepToRef(node *Node) bool
 
-// deepToStruct scans the specified node and all of its descendents, if the type of any node
+// deepToStruct scans the specified node and all of its descendents, if the ValueKind of any node
 // is struct, it returns true. Otherwise, it returns false.
 func deepToStruct(node *Node) bool
 
@@ -842,10 +840,10 @@ func jsonFile() string
 // lcfirst returns s with the first letter mapped to its lower case.
 func lcfirst(s string) string
 
-// lookupStructName returns the struct name of the specified node if its type is struct.
+// lookupStructName returns the struct name of the specified node if its ValueKind is struct.
 func lookupStructName(node *Node) string
 
-// shortenRefName shortens refName by removing its suffix.
+// shortenRefName shortens refName by removing its suffix, e.g. "aConf" to "a".
 func shortenRefName(refName string) string
 
 // stackPop removes a string from the top of the global stack and returns the string.
