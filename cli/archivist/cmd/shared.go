@@ -124,10 +124,9 @@ func (this *sharedFlags) buildGuesser(jsonFile string, primaryStructNameMap map[
 	return this.buildGuesserImpl(g, matcher, primaryStructNameMap, structNameSuffix)
 }
 
-func (this *sharedFlags) buildGuesserWithJavascriptFile(data []byte, file string, primaryStructNameMap map[string]int, structNameSuffix string) *guesser.Guesser {
+func (this *sharedFlags) buildGuesserWithBytes(data []byte, jsonFile string, primaryStructNameMap map[string]int, structNameSuffix string) *guesser.Guesser {
 	var err error
 	matcher := meta.NewMultiMatcher()
-	jsonFile := strings.TrimSuffix(file, ".js") + ".json"
 	err = matcher.ParseMetaFiles(jsonFile)
 	if err != nil {
 		panic(err)

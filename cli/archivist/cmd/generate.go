@@ -316,8 +316,9 @@ func (this *generateCmdT) genStructRelatedCode(allFiles []string) {
 				panic(err)
 			} else {
 				data = evalJavascript(data, file)
-				g = this.buildGuesserWithJavascriptFile(
-					data, file, primaryStructNameMap, this.structNameSuffix)
+				jsonFile := strings.TrimSuffix(file, ".js") + ".json"
+				g = this.buildGuesserWithBytes(
+					data, jsonFile, primaryStructNameMap, this.structNameSuffix)
 			}
 		default:
 			panic("impossible")

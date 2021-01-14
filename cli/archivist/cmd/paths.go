@@ -94,7 +94,8 @@ func (this *pathsCmdT) execute(cmd *cobra.Command, args []string) {
 	} else if strings.HasSuffix(file, ".json") {
 		g = this.buildGuesser(file, nil, "")
 	} else {
-		g = this.buildGuesserWithJavascriptFile(data, file, nil, "")
+		jsonFile := strings.TrimSuffix(file, ".js") + ".json"
+		g = this.buildGuesserWithBytes(data, jsonFile, nil, "")
 	}
 
 	printAllPathTypes(g.Root.AllPathTypes())
