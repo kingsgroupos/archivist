@@ -802,7 +802,8 @@ type collectionArgs struct {
     CollectionExtension bool
 }
 
-// collectionExtensionArgs is the object passed to collectionExtension.tpl when executing the code template.
+// collectionExtensionArgs is the object passed to collectionExtension.tpl when executing the
+// code template.
 type collectionExtensionArgs struct {
     Pkg string
 }
@@ -876,6 +877,8 @@ func trimSuffix(s string, suffix string) string
 func ucfirst(s string) string
 ```
 
+The source code for parsing `duration`: <a href="https://github.com/kingsgroupos/misc/blob/e357d06776d101716bbb29197fa9d930414f3815/wtime/duration.go#L44" target="_blank">Link1</a>, <a href="https://github.com/golang/go/blob/release-branch.go1.15/src/time/format.go#L1374" target="_blank">Link2</a>
+
 <a name="faq"></a>
 ## FAQ
 
@@ -903,7 +906,7 @@ type {{toPascal (lookupStructName .)}} struct {}
 {{- end}}
 ```
 
-For more information, please refer to [Generate Data Structure Definitions for Another Programming Language](#code-templates).
+For more information, please refer to [Generating Data Structure Definitions for Another Programming Language](#code-templates).
 
 - **Does archivist support multi-config-version?**
 
