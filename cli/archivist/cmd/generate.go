@@ -252,7 +252,11 @@ func (this *generateCmdT) loadSha1MapImpl() map[string]string {
 
 func (this *generateCmdT) makeSensitiveCombo() (string, error) {
 	dataSha1 := this.makeSensitiveArgsSha1()
-	if info, err := os.Stat(os.Args[0]); err != nil {
+	p, err := os.Executable()
+	if err != nil {
+		return "", err
+	}
+	if info, err := os.Stat(p); err != nil {
 		return "", err
 	} else {
 		return combineSha1AndModTime(dataSha1, info), nil
@@ -777,14 +781,13 @@ func (this *generateCmdT) whichCmd(name string) {
 
 func (this *generateCmdT) genCodeWithEasyjson(files ...string) {
 	args := append([]string{"-all"}, files...)
-	exePath := os.Args[0]
-	absPath, err := filepath.Abs(exePath)
-	if err != nil {
-		panic(err)
-	}
-	easyjsonPath := filepath.Join(filepath.Dir(absPath), "easyjson")
-	if err := misc.FindFile(easyjsonPath); err != nil {
-		easyjsonPath = "easyjson"
+	easyjsonPath := "easyjson"
+	exePath, err := os.Executable()
+	if err == nil {
+		p := filepath.Join(filepath.Dir(exePath), "easyjson")
+		if err := misc.FindFile(p); err == nil {
+			easyjsonPath = p
+		}
 	}
 	easyjson := exec.Command(easyjsonPath, args...)
 	easyjson.Stdout = os.Stdout

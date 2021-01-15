@@ -882,9 +882,9 @@ The source code for parsing `duration`: <a href="https://github.com/kingsgroupos
 <a name="faq"></a>
 ## FAQ
 
-- **Why JSON? Why not YAML, TOML, XML, CSV, ...?**
+- **Why JSON? Why not YAML, TOML, XML, CSV, Protobuf, ...?**
 
-JSON is simple yet good enough. It is widely supported by all kinds of programming languages. It supports hierarchical data structure. It provides no choice between field and property when you add a piece of data into a struct. JSON files are easy to compare and merge.
+JSON is simple yet good enough. It is widely supported by all kinds of programming languages. It supports hierarchical data structure. You don't have to choose between field and property when you add a piece of data into a struct. JSON files are easy to compare and merge.
 
 JSON is not perfect. It has too many double quotation marks. It does not support comments. The last item in a {}/[] must have no trailing comma. That is why archivist also supports Javascript as an auxiliary format. The data definition syntax of Javascript is very close to JSON.
 
