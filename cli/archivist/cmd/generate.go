@@ -32,6 +32,8 @@ package cmd
 
 import (
 	"bytes"
+	"crypto/sha1"
+	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"os"
@@ -47,6 +49,7 @@ import (
 	"github.com/kingsgroupos/misc"
 	"github.com/kingsgroupos/misc/chksum"
 	"github.com/kingsgroupos/misc/variable"
+	"github.com/kingsgroupos/misc/wtime"
 	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
 )
@@ -84,11 +87,14 @@ func init() {
 		"x-bsonTag", false, "generate BSON tag for struct field")
 	cmd.Flags().StringVar(&generateCmd.structNameSuffix,
 		"structNameSuffix", "Conf", "name suffix of struct")
+	cmd.Flags().BoolVar(&generateCmd.boost,
+		"boost", false, "boost code generation")
 
 	generateCmd.registerSharedFlags(cmd)
 }
 
 type generateCmdT struct {
+	// Note: be care of makeSensitiveArgsSha1
 	verbose             bool
 	pkg                 string
 	outputDir           string
@@ -100,6 +106,7 @@ type generateCmdT struct {
 	easyjson            bool
 	bsonTag             bool
 	structNameSuffix    string
+	boost               bool
 
 	sharedFlags
 
@@ -202,8 +209,91 @@ func (this *generateCmdT) execute(cmd *cobra.Command, args []string) {
 		restoreCollectionExtension()
 	}()
 
-	this.genStructRelatedCode(allFiles)
+	sha1Map := this.loadSha1Map()
+	this.genStructRelatedCode(allFiles, sha1Map)
 	this.genEasyJSONRelatedCode(allFiles)
+	this.saveSha1Map(sha1Map)
+}
+
+const sha1File = "collection.sha1"
+
+func (this *generateCmdT) loadSha1Map() map[string]string {
+	if m := this.loadSha1MapImpl(); m != nil {
+		return m
+	}
+	return make(map[string]string)
+}
+
+func (this *generateCmdT) loadSha1MapImpl() map[string]string {
+	if !this.boost {
+		return nil
+	}
+
+	file := filepath.Join(this.outputDir, sha1File)
+	data, err := ioutil.ReadFile(file)
+	if err != nil {
+		return nil
+	}
+	sha1Map := make(map[string]string)
+	if err := json.Unmarshal(data, &sha1Map); err != nil {
+		return nil
+	}
+
+	combo, err := this.makeSensitiveCombo()
+	if err != nil {
+		return nil
+	}
+	if x := sha1Map["*"]; x == "" || x != combo {
+		return nil
+	}
+
+	return sha1Map
+}
+
+func (this *generateCmdT) makeSensitiveCombo() (string, error) {
+	dataSha1 := this.makeSensitiveArgsSha1()
+	if info, err := os.Stat(os.Args[0]); err != nil {
+		return "", err
+	} else {
+		return combineSha1AndModTime(dataSha1, info), nil
+	}
+}
+
+func (this *generateCmdT) makeSensitiveArgsSha1() string {
+	argMap := make(map[string]interface{})
+	argMap["pkg"] = this.pkg
+	argMap["outputDir"] = this.outputDir
+	argMap["codeFileExt"] = this.codeFileExt
+	argMap["bsonTag"] = this.bsonTag
+	argMap["structNameSuffix"] = this.structNameSuffix
+	m := make(map[string]interface{})
+	argMap["sharedFlags"] = m
+	m["intType"] = this.sharedFlags.intType
+	m["floatType"] = this.sharedFlags.floatType
+	m["floatPrecision"] = this.sharedFlags.floatPrecision
+	m["skipped"] = this.sharedFlags.skipped
+	argMap["__"+TplStruct] = TplMap[TplStruct]
+	data := sha1.Sum(misc.ToJSON(argMap))
+	return fmt.Sprintf("%x", data)
+}
+
+func (this *generateCmdT) saveSha1Map(sha1Map map[string]string) {
+	if !this.boost {
+		return
+	}
+
+	combo, err := this.makeSensitiveCombo()
+	if err != nil {
+		fmt.Printf("Error: %v\n", err)
+		return
+	}
+
+	sha1Map["*"] = combo
+	data := misc.ToPrettyJSON(sha1Map)
+	file := filepath.Join(this.outputDir, sha1File)
+	if err := ioutil.WriteFile(file, append(data, '\n'), 0644); err != nil {
+		panic(err)
+	}
 }
 
 func (this *generateCmdT) allFiles(args []string) []string {
@@ -272,7 +362,12 @@ func deepToStruct(node *guesser.Node) bool {
 	}
 }
 
-func (this *generateCmdT) genStructRelatedCode(allFiles []string) {
+func combineSha1AndModTime(sha1Str string, info os.FileInfo) string {
+	modTime := info.ModTime().Format(wtime.CompactDateTimeFormat)
+	return fmt.Sprintf("%s+%s", sha1Str, modTime)
+}
+
+func (this *generateCmdT) genStructRelatedCode(allFiles []string, sha1Map map[string]string) {
 	if !this.structCode {
 		return
 	}
@@ -307,14 +402,26 @@ func (this *generateCmdT) genStructRelatedCode(allFiles []string) {
 	var guessers []*guesser.Guesser
 	for i, file := range allFiles {
 		fmt.Printf("Processing %s...\n", file)
+		var fileSha1 [sha1.Size]byte
 		var g *guesser.Guesser
 		switch {
 		case strings.HasSuffix(file, ".json"):
-			g = this.buildGuesser(file, primaryStructNameMap, this.structNameSuffix)
+			if data, err := ioutil.ReadFile(file); err != nil {
+				panic(err)
+			} else {
+				if this.boost {
+					fileSha1 = sha1.Sum(data)
+				}
+				g = this.buildGuesserWithBytes(
+					data, file, primaryStructNameMap, this.structNameSuffix)
+			}
 		case strings.HasSuffix(file, ".js"):
 			if data, err := ioutil.ReadFile(file); err != nil {
 				panic(err)
 			} else {
+				if this.boost {
+					fileSha1 = sha1.Sum(data)
+				}
 				data = evalJavascript(data, file)
 				jsonFile := strings.TrimSuffix(file, ".js") + ".json"
 				g = this.buildGuesserWithBytes(
@@ -370,6 +477,29 @@ func (this *generateCmdT) genStructRelatedCode(allFiles []string) {
 			return true
 		})
 
+		g.Root.Traverse(func(node *guesser.Node) bool {
+			switch node.ValueKind {
+			case guesser.ValueKind_Ref:
+				key := node.Value.RawRef + ".json"
+				idx := misc.IndexStrings(revRefGraph[key], jsonFiles[i])
+				if idx < 0 {
+					revRefGraph[key] = append(revRefGraph[key], jsonFiles[i])
+				}
+			}
+			return true
+		})
+
+		outputFile := filepath.Join(this.outputDir, primaryStructName+this.codeFileExt)
+		sha1Str := fmt.Sprintf("%x", fileSha1)
+		if this.boost {
+			if info, err := os.Stat(outputFile); err == nil {
+				basename := filepath.Base(file)
+				if sha1Map[basename] == combineSha1AndModTime(sha1Str, info) {
+					continue
+				}
+			}
+		}
+
 		tplArgs := struct {
 			Pkg   string
 			Nodes []*guesser.Node
@@ -389,7 +519,6 @@ func (this *generateCmdT) genStructRelatedCode(allFiles []string) {
 			panic(err)
 		}
 
-		outputFile := filepath.Join(this.outputDir, primaryStructName+this.codeFileExt)
 		err = ioutil.WriteFile(outputFile, sb.Bytes(), 0644)
 		if err != nil {
 			panic(err)
@@ -397,17 +526,12 @@ func (this *generateCmdT) genStructRelatedCode(allFiles []string) {
 
 		this.gofmt(outputFile)
 
-		g.Root.Traverse(func(node *guesser.Node) bool {
-			switch node.ValueKind {
-			case guesser.ValueKind_Ref:
-				key := node.Value.RawRef + ".json"
-				idx := misc.IndexStrings(revRefGraph[key], jsonFiles[i])
-				if idx < 0 {
-					revRefGraph[key] = append(revRefGraph[key], jsonFiles[i])
-				}
+		if this.boost {
+			if info, err := os.Stat(outputFile); err == nil {
+				basename := filepath.Base(file)
+				sha1Map[basename] = combineSha1AndModTime(sha1Str, info)
 			}
-			return true
-		})
+		}
 	}
 
 	if guessers == nil {
