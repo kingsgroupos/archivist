@@ -173,6 +173,15 @@ func (this *generateCmdT) execute(cmd *cobra.Command, args []string) {
 	}
 
 	this.skipped = loadSkipped(allFiles)
+	for _, file := range allFiles {
+		basename := filepath.Base(file)
+		if idx := strings.LastIndex(basename, "."); idx >= 0 {
+			basename = basename[:idx]
+		}
+		if _, ok := this.skipped[basename]; ok {
+			panic(fmt.Errorf("skipped file should not appear in the input. file: " + file))
+		}
+	}
 
 	if this.verbose {
 		fmt.Println("Output directory: " + this.outputDir)
