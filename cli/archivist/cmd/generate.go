@@ -247,24 +247,12 @@ func (this *generateCmdT) loadSha1MapImpl() map[string]string {
 		return nil
 	}
 
-	combo, err := this.makeSensitiveCombo()
-	if err != nil {
-		return nil
-	}
-	if x := sha1Map["*"]; x == "" || x != combo {
+	sensitive := this.makeSensitiveArgsSha1()
+	if x := sha1Map["*"]; x == "" || x != sensitive {
 		return nil
 	}
 
 	return sha1Map
-}
-
-func (this *generateCmdT) makeSensitiveCombo() (string, error) {
-	dataSha1 := this.makeSensitiveArgsSha1()
-	p, err := os.Executable()
-	if err != nil {
-		return "", err
-	}
-	return combineSha1WithFileSha1(dataSha1, p), nil
 }
 
 func (this *generateCmdT) makeSensitiveArgsSha1() string {
@@ -290,13 +278,7 @@ func (this *generateCmdT) saveSha1Map(sha1Map map[string]string) {
 		return
 	}
 
-	combo, err := this.makeSensitiveCombo()
-	if err != nil {
-		fmt.Printf("Error: %v\n", err)
-		return
-	}
-
-	sha1Map["*"] = combo
+	sha1Map["*"] = this.makeSensitiveArgsSha1()
 	data := misc.ToPrettyJSON(sha1Map)
 	file := filepath.Join(this.outputDir, sha1File)
 	if err := ioutil.WriteFile(file, append(data, '\n'), 0644); err != nil {
@@ -374,13 +356,13 @@ func combineSha1s(str1, str2 string) string {
 	return fmt.Sprintf("%s+%s", str1, str2)
 }
 
-func combineSha1WithFileSha1(str1 string, file string) string {
+func combineSha1WithFileSha1(str1 string, file string) (string, error) {
 	data, err := ioutil.ReadFile(file)
 	if err != nil {
-		panic(err)
+		return "", err
 	}
 	str2 := fmt.Sprintf("%x", sha1.Sum(data))
-	return combineSha1s(str1, str2)
+	return combineSha1s(str1, str2), nil
 }
 
 func (this *generateCmdT) genStructRelatedCode(allFiles []string, sha1Map map[string]string) {
@@ -509,8 +491,8 @@ func (this *generateCmdT) genStructRelatedCode(allFiles []string, sha1Map map[st
 		sha1Str := fmt.Sprintf("%x", fileSha1)
 		if this.boost {
 			basename := filepath.Base(file)
-			c := combineSha1WithFileSha1(sha1Str, outputFile)
-			if sha1Map[basename] == c {
+			c, err := combineSha1WithFileSha1(sha1Str, outputFile)
+			if err == nil && sha1Map[basename] == c {
 				continue
 			}
 		}
@@ -543,7 +525,10 @@ func (this *generateCmdT) genStructRelatedCode(allFiles []string, sha1Map map[st
 
 		if this.boost {
 			basename := filepath.Base(file)
-			sha1Map[basename] = combineSha1WithFileSha1(sha1Str, outputFile)
+			sha1Map[basename], err = combineSha1WithFileSha1(sha1Str, outputFile)
+			if err != nil {
+				panic(err)
+			}
 		}
 	}
 
