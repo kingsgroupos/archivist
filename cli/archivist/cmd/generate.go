@@ -49,7 +49,6 @@ import (
 	"github.com/kingsgroupos/misc"
 	"github.com/kingsgroupos/misc/chksum"
 	"github.com/kingsgroupos/misc/variable"
-	"github.com/kingsgroupos/misc/wtime"
 	"github.com/pkg/errors"
 	"github.com/spf13/cobra"
 )
@@ -265,11 +264,7 @@ func (this *generateCmdT) makeSensitiveCombo() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	if info, err := os.Stat(p); err != nil {
-		return "", err
-	} else {
-		return combineSha1AndModTime(dataSha1, info), nil
-	}
+	return combineSha1WithFileSha1(dataSha1, p), nil
 }
 
 func (this *generateCmdT) makeSensitiveArgsSha1() string {
@@ -375,9 +370,17 @@ func deepToStruct(node *guesser.Node) bool {
 	}
 }
 
-func combineSha1AndModTime(sha1Str string, info os.FileInfo) string {
-	modTime := info.ModTime().Format(wtime.CompactDateTimeFormat)
-	return fmt.Sprintf("%s+%s", sha1Str, modTime)
+func combineSha1s(str1, str2 string) string {
+	return fmt.Sprintf("%s+%s", str1, str2)
+}
+
+func combineSha1WithFileSha1(str1 string, file string) string {
+	data, err := ioutil.ReadFile(file)
+	if err != nil {
+		panic(err)
+	}
+	str2 := fmt.Sprintf("%x", sha1.Sum(data))
+	return combineSha1s(str1, str2)
 }
 
 func (this *generateCmdT) genStructRelatedCode(allFiles []string, sha1Map map[string]string) {
@@ -505,11 +508,10 @@ func (this *generateCmdT) genStructRelatedCode(allFiles []string, sha1Map map[st
 		outputFile := filepath.Join(this.outputDir, primaryStructName+this.codeFileExt)
 		sha1Str := fmt.Sprintf("%x", fileSha1)
 		if this.boost {
-			if info, err := os.Stat(outputFile); err == nil {
-				basename := filepath.Base(file)
-				if sha1Map[basename] == combineSha1AndModTime(sha1Str, info) {
-					continue
-				}
+			basename := filepath.Base(file)
+			c := combineSha1WithFileSha1(sha1Str, outputFile)
+			if sha1Map[basename] == c {
+				continue
 			}
 		}
 
@@ -540,10 +542,8 @@ func (this *generateCmdT) genStructRelatedCode(allFiles []string, sha1Map map[st
 		this.gofmt(outputFile)
 
 		if this.boost {
-			if info, err := os.Stat(outputFile); err == nil {
-				basename := filepath.Base(file)
-				sha1Map[basename] = combineSha1AndModTime(sha1Str, info)
-			}
+			basename := filepath.Base(file)
+			sha1Map[basename] = combineSha1WithFileSha1(sha1Str, outputFile)
 		}
 	}
 
