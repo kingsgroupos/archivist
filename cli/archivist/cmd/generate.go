@@ -39,7 +39,6 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
-	"runtime"
 	"sort"
 	"strings"
 	"text/template"
@@ -189,7 +188,7 @@ func (this *generateCmdT) execute(cmd *cobra.Command, args []string) {
 	}
 
 	if this.codeFileExt == ".go" {
-		this.whichCmd("gofmt")
+		whichCmd("gofmt")
 	}
 
 	p2 := filepath.Join(this.outputDir, TplCollectionExtension+this.codeFileExt)
@@ -760,15 +759,9 @@ func (this *generateCmdT) genEasyJSONRelatedCode(allFiles []string) {
 	this.genCodeWithEasyjson(a1...)
 }
 
-func (this *generateCmdT) whichCmd(name string) {
-	if runtime.GOOS == "windows" {
-		return
-	}
-
-	which := exec.Command("which", name)
-	which.Stdout = ioutil.Discard
-	which.Stderr = ioutil.Discard
-	if err := which.Run(); err != nil {
+func whichCmd(name string) {
+	_, err := exec.LookPath(name)
+	if err != nil {
 		panic(fmt.Errorf("cannot find the following command: %s", name))
 	}
 }
