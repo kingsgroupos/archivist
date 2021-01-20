@@ -14,6 +14,6 @@ try {
 	console.log(json)
 } catch (err) {
 	console.error('Failed to load "' + argv[0] + '"')
-	console.log(err.stack)
+	console.error(err.stack)
 	process.exit(1)
 }
