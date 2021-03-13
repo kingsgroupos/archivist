@@ -32,7 +32,6 @@ package guesser
 
 import (
 	"encoding/json"
-	"io/ioutil"
 
 	"github.com/pkg/errors"
 )
@@ -51,7 +50,7 @@ func NewGuesser(opts ...Option) *Guesser {
 }
 
 func (this *Guesser) ParseFile(file string) error {
-	bts, err := ioutil.ReadFile(file)
+	bts, err := ReadDataFile(file)
 	if err != nil {
 		return err
 	}

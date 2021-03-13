@@ -36,6 +36,7 @@ import (
 	"path/filepath"
 	"strings"
 
+	"github.com/kingsgroupos/archivist/cli/archivist/guesser"
 	"github.com/kingsgroupos/misc"
 	"github.com/kingsgroupos/misc/variable"
 	"github.com/kingsgroupos/misc/wildcard"
@@ -105,6 +106,8 @@ func (this *orphanCmdT) execute(cmd *cobra.Command, args []string) {
 	allDataFiles, err := misc.AllFiles(pats1, "", true)
 	if err != nil {
 		panic(err)
+	} else {
+		allDataFiles = guesser.PickPureDataFiles(allDataFiles)
 	}
 
 	pats2 := []string{

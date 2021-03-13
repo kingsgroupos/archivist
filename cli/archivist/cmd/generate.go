@@ -295,6 +295,9 @@ func (this *generateCmdT) allFiles(args []string) []string {
 		panic(err)
 	}
 
+	files1 = guesser.PickPureDataFiles(files1)
+	files2 = guesser.PickPureDataFiles(files2)
+
 	m2 := make(map[string]struct{})
 	for _, f2 := range files2 {
 		m2[f2] = struct{}{}
@@ -403,7 +406,7 @@ func (this *generateCmdT) genStructRelatedCode(allFiles []string, sha1Map map[st
 		var g *guesser.Guesser
 		switch {
 		case strings.HasSuffix(file, ".json"):
-			if data, err := ioutil.ReadFile(file); err != nil {
+			if data, err := guesser.ReadDataFile(file); err != nil {
 				panic(err)
 			} else {
 				if this.boost {
@@ -413,7 +416,7 @@ func (this *generateCmdT) genStructRelatedCode(allFiles []string, sha1Map map[st
 					data, file, primaryStructNameMap, this.structNameSuffix)
 			}
 		case strings.HasSuffix(file, ".js"):
-			if data, err := ioutil.ReadFile(file); err != nil {
+			if data, err := guesser.ReadDataFile(file); err != nil {
 				panic(err)
 			} else {
 				if this.boost {

@@ -32,7 +32,6 @@ package cmd
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
 	"strings"
 	"text/tabwriter"
@@ -72,7 +71,7 @@ func (this *pathsCmdT) execute(cmd *cobra.Command, args []string) {
 	this.validateShared()
 
 	file := args[0]
-	data, err := ioutil.ReadFile(file)
+	data, err := guesser.ReadDataFile(file)
 	if err != nil {
 		panic(err)
 	}
