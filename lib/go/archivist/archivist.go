@@ -177,6 +177,10 @@ func updateElemViaReflection(whose1, whose2 interface{}) {
 }
 
 func (this *Archivist) LoadCollection(newCollection func() interface{}, overwrites ...Overwrite) (Collection, error) {
+	if err := misc.FindDirectory(this.rootDir); err != nil {
+		return nil, errors.WithStack(err)
+	}
+
 	g := ConfGroup()
 	if g == "" {
 		return nil, errors.WithStack(errEnv)
