@@ -31,6 +31,7 @@
 package meta
 
 import (
+	"io/ioutil"
 	"path/filepath"
 	"strings"
 
@@ -47,7 +48,7 @@ func NewMultiMatcher() *MultiMatcher {
 	return &MultiMatcher{}
 }
 
-func (this *MultiMatcher) ParseMetaFiles(jsonFile string) error {
+func metaFiles(jsonFile string) (string, string) {
 	dir1 := filepath.Dir(jsonFile)
 	dir2 := filepath.Dir(dir1)
 	dir3 := filepath.Dir(dir2)
@@ -60,7 +61,18 @@ func (this *MultiMatcher) ParseMetaFiles(jsonFile string) error {
 	f0 := strings.TrimSuffix(jsonFile, ".json")
 	f1 := f0 + ".meta"
 	f2 := f0 + ".suggested.meta"
+	return f1, f2
+}
 
+func ReadMetaFiles(jsonFile string) ([]byte, []byte) {
+	f1, f2 := metaFiles(jsonFile)
+	data1, _ := ioutil.ReadFile(f1)
+	data2, _ := ioutil.ReadFile(f2)
+	return data1, data2
+}
+
+func (this *MultiMatcher) ParseMetaFiles(jsonFile string) error {
+	f1, f2 := metaFiles(jsonFile)
 	if err := misc.FindFile(f1); err == nil {
 		this.p1 = NewParser()
 		if err := this.p1.ParseFile(f1); err != nil {

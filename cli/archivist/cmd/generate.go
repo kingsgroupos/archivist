@@ -45,6 +45,7 @@ import (
 
 	"github.com/edwingeng/deque"
 	"github.com/kingsgroupos/archivist/cli/archivist/guesser"
+	"github.com/kingsgroupos/archivist/cli/archivist/meta"
 	"github.com/kingsgroupos/misc"
 	"github.com/kingsgroupos/misc/chksum"
 	"github.com/kingsgroupos/misc/variable"
@@ -398,6 +399,17 @@ func (this *generateCmdT) genStructRelatedCode(allFiles []string, sha1Map map[st
 		panic("impossible")
 	}
 
+	appendMetaFiles := func(jsonFile string, data []byte) []byte {
+		d1, d2 := meta.ReadMetaFiles(jsonFile)
+		var buf bytes.Buffer
+		buf.Write(data)
+		buf.WriteByte('\n')
+		buf.Write(d1)
+		buf.WriteByte('\n')
+		buf.Write(d2)
+		return buf.Bytes()
+	}
+
 	revRefGraph := make(map[string][]string)
 	var guessers []*guesser.Guesser
 	for i, file := range allFiles {
@@ -410,7 +422,7 @@ func (this *generateCmdT) genStructRelatedCode(allFiles []string, sha1Map map[st
 				panic(err)
 			} else {
 				if this.boost {
-					fileSha1 = sha1.Sum(data)
+					fileSha1 = sha1.Sum(appendMetaFiles(file, data))
 				}
 				g = this.buildGuesserWithBytes(
 					data, file, primaryStructNameMap, this.structNameSuffix)
@@ -419,11 +431,11 @@ func (this *generateCmdT) genStructRelatedCode(allFiles []string, sha1Map map[st
 			if data, err := guesser.ReadDataFile(file); err != nil {
 				panic(err)
 			} else {
+				jsonFile := strings.TrimSuffix(file, ".js") + ".json"
 				if this.boost {
-					fileSha1 = sha1.Sum(data)
+					fileSha1 = sha1.Sum(appendMetaFiles(jsonFile, data))
 				}
 				data = evalJavascript(data, file)
-				jsonFile := strings.TrimSuffix(file, ".js") + ".json"
 				g = this.buildGuesserWithBytes(
 					data, jsonFile, primaryStructNameMap, this.structNameSuffix)
 			}
