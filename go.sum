@@ -43,8 +43,8 @@ github.com/edwingeng/deque v0.0.0-20201129052308-db45af44a250 h1:TWsrB3FGrQ7XzE1
 github.com/edwingeng/deque v0.0.0-20201129052308-db45af44a250/go.mod h1:3Ys1pJhyVaB6iWigv4o2r6Ug1GZmfDWqvqmO6bjojg0=
 github.com/edwingeng/easyjson-alt v0.0.0-20201203071049-4701d302eb37 h1:QwW2zFfdKEWH45mb79QyZquwGG33+vKuLyibAqQK0GY=
 github.com/edwingeng/easyjson-alt v0.0.0-20201203071049-4701d302eb37/go.mod h1:VCLZtAueXQON/cq6ynaQsFL4A4FdutCIKhvxbzswy8M=
-github.com/edwingeng/slog v0.0.0-20210815193503-ec20520ba17c h1:lCSSbxQVmUXCOdoytYwraDNgCFXPCaz3WgmB/yerGBA=
-github.com/edwingeng/slog v0.0.0-20210815193503-ec20520ba17c/go.mod h1:nrC+Xx86HRmxT3Xd1qCEGySn+e5kLbrlPFen80NUwPE=
+github.com/edwingeng/slog v0.0.0-20211013154832-272c5f754314 h1:gnzf6z5M2KUJfXQTT0hfdfNXyiph+nXboe8ceA+prq8=
+github.com/edwingeng/slog v0.0.0-20211013154832-272c5f754314/go.mod h1:nrC+Xx86HRmxT3Xd1qCEGySn+e5kLbrlPFen80NUwPE=
 github.com/fatih/color v1.7.0/go.mod h1:Zm6kSWBoL9eyXnKyktHP6abPY2pDugNf5KwzbycvMj4=
 github.com/fatih/color v1.12.0/go.mod h1:ELkj/draVOlAH/xkhN6mQ50Qd0MPOk5AAr3maGEBuJM=
 github.com/fatih/color v1.13.0 h1:8LOYc1KYPPmyKMuN8QV2DNRWNbLo6LZ0iLs8+mlH53w=
@@ -114,8 +114,8 @@ github.com/jstemmer/go-junit-report v0.0.0-20190106144839-af01ea7f8024/go.mod h1
 github.com/jtolds/gls v4.20.0+incompatible h1:xdiiI2gbIgH/gLH7ADydsJ1uDOEzR8yvV7C0MuV77Wo=
 github.com/jtolds/gls v4.20.0+incompatible/go.mod h1:QJZ7F/aHp+rZTRtaJ1ow/lLfFfVYBRgL+9YlvaHOwJU=
 github.com/julienschmidt/httprouter v1.2.0/go.mod h1:SYymIcj16QtmaHHD7aYtjjsJG7VTCxuUUipMqKk8s4w=
-github.com/kingsgroupos/misc v0.0.0-20201228072319-bee5e6c02b4a h1:2O+WhQ4R0KunD82uSCnqULNcpjdr8Zrlh0vOExG2n1I=
-github.com/kingsgroupos/misc v0.0.0-20201228072319-bee5e6c02b4a/go.mod h1:uuA4VrPCPS+grp2Zu6LWv8S5RNdlccYZzt6HrLWrPb8=
+github.com/kingsgroupos/misc v0.0.0-20210421024126-0646cc8eed49 h1:4EiQ51PG49zmfHnpY/Vpkq2zxELS4oixELra0gt5R6I=
+github.com/kingsgroupos/misc v0.0.0-20210421024126-0646cc8eed49/go.mod h1:uuA4VrPCPS+grp2Zu6LWv8S5RNdlccYZzt6HrLWrPb8=
 github.com/kisielk/errcheck v1.1.0/go.mod h1:EZBBE59ingxPouuu3KfxchcWSUPOHkagtvWXihfKN4Q=
 github.com/kisielk/gotool v1.0.0/go.mod h1:XhKaO+MFFWcvkIS/tQcRk01m1F5IRFswLeQ+oQHNcck=
 github.com/konsorten/go-windows-terminal-sequences v1.0.1/go.mod h1:T0+1ngSBFLxvqU3pZ+m/2kptfBszLMUkC4ZK/EgS/cQ=
@@ -307,8 +307,8 @@ golang.org/x/sys v0.0.0-20210330210617-4fbd30eecc44/go.mod h1:h1NjWce9XRLGQEsW7w
 golang.org/x/sys v0.0.0-20210510120138-977fb7262007/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
 golang.org/x/sys v0.0.0-20210630005230-0f9fa26af87c/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
 golang.org/x/sys v0.0.0-20210927094055-39ccf1dd6fa6/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
-golang.org/x/sys v0.0.0-20211001092434-39dca1131b70 h1:pGleJoyD1yA5HfvuaksHxD0404gsEkNDerKsQ0N0y1s=
-golang.org/x/sys v0.0.0-20211001092434-39dca1131b70/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
+golang.org/x/sys v0.0.0-20211031064116-611d5d643895 h1:iaNpwpnrgL5jzWS0vCNnfa8HqzxveCFpFx3uC/X4Tps=
+golang.org/x/sys v0.0.0-20211031064116-611d5d643895/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
 golang.org/x/term v0.0.0-20201126162022-7de9c90e9dd1/go.mod h1:bj7SfCRtBDWHUb9snDiAeCFNEtKQo2Wmx5Cou7ajbmo=
 golang.org/x/text v0.3.0/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 golang.org/x/text v0.3.1-0.20180807135948-17ff2d5776d2/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=

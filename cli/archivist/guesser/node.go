@@ -337,7 +337,8 @@ func (this *Node) parseValue(val interface{}, stringKeyTester func(nodePath stri
 }
 
 func errorIncompatibleWithExtraInfo(err *werr.RichError, v interface{}) *werr.RichError {
-	if len(err.Details) < 6 {
+	details := werr.ExtractDetails(err)
+	if len(details) < 6 {
 		str := misc.ToPrettyJSONString(v)
 		const maxLen = 8192
 		if len(str) <= maxLen {
@@ -550,9 +551,10 @@ func prettyErrorIncompatibleImpl(err error, number *int, sb *strings.Builder) {
 	}
 	if richErr, ok := err.(*werr.RichError); ok {
 		prettyErrorIncompatibleImpl(richErr.Unwrap(), number, sb)
-		for i := 0; i < len(richErr.Details); i += 2 {
+		details := werr.ExtractDetails(richErr)
+		for i := 0; i < len(details); i += 2 {
 			split()
-			_, _ = fmt.Fprintf(sb, "%s\n", richErr.Details[i+1])
+			_, _ = fmt.Fprintf(sb, "%s\n", details[i+1])
 		}
 	} else {
 		split()
