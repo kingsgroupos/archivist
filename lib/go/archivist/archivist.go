@@ -76,7 +76,7 @@ type Archivist struct {
 
 func NewArchivist(opts ...Option) *Archivist {
 	arch := &Archivist{
-		Logger: slog.NewConsoleLogger(),
+		Logger: slog.NewDevelopmentConfig().MustBuild(),
 	}
 	if workingDir, err := os.Getwd(); err != nil {
 		panic(err)

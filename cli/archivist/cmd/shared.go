@@ -357,7 +357,7 @@ func loadSkipped(allFiles []string) map[string]struct{} {
 	for _, d := range uniqueDirs2 {
 		a, err := loadSkippedImpl(d)
 		if err != nil {
-			if os.IsNotExist(err) {
+			if errors.Is(err, os.ErrNotExist) {
 				continue
 			}
 			panic(err)
