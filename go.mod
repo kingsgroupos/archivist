@@ -3,7 +3,7 @@ module github.com/kingsgroupos/archivist
 go 1.15
 
 require (
-	github.com/edwingeng/deque v0.0.0-20201129052308-db45af44a250
+	github.com/edwingeng/deque v1.0.3
 	github.com/edwingeng/easyjson-alt v0.0.0-20201203071049-4701d302eb37
 	github.com/edwingeng/slog v0.0.0-20211013154832-272c5f754314
 	github.com/fatih/color v1.13.0 // indirect

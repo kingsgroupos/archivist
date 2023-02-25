@@ -39,8 +39,8 @@ github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/dgrijalva/jwt-go v3.2.0+incompatible/go.mod h1:E3ru+11k8xSBh+hMPgOLZmtrrCbhqsmaPHjLKYnJCaQ=
 github.com/dgryski/go-sip13 v0.0.0-20181026042036-e10d5fee7954/go.mod h1:vAd38F8PWV+bWy6jNmig1y/TA+kYO4g3RSRF0IAv0no=
-github.com/edwingeng/deque v0.0.0-20201129052308-db45af44a250 h1:TWsrB3FGrQ7XzE1Z2ydDqZ10sfzTF/1X/yNSuRQSQUw=
-github.com/edwingeng/deque v0.0.0-20201129052308-db45af44a250/go.mod h1:3Ys1pJhyVaB6iWigv4o2r6Ug1GZmfDWqvqmO6bjojg0=
+github.com/edwingeng/deque v1.0.3 h1:gx+5OnQK8qMcYNUxcD/M76BT/LujVNVAZEP/MGF8WNw=
+github.com/edwingeng/deque v1.0.3/go.mod h1:3Ys1pJhyVaB6iWigv4o2r6Ug1GZmfDWqvqmO6bjojg0=
 github.com/edwingeng/easyjson-alt v0.0.0-20201203071049-4701d302eb37 h1:QwW2zFfdKEWH45mb79QyZquwGG33+vKuLyibAqQK0GY=
 github.com/edwingeng/easyjson-alt v0.0.0-20201203071049-4701d302eb37/go.mod h1:VCLZtAueXQON/cq6ynaQsFL4A4FdutCIKhvxbzswy8M=
 github.com/edwingeng/slog v0.0.0-20211013154832-272c5f754314 h1:gnzf6z5M2KUJfXQTT0hfdfNXyiph+nXboe8ceA+prq8=
